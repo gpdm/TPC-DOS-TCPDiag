@@ -6,10 +6,10 @@ onto an IP network, and conduct some basic diagnostics.
 This was featured on my [video on YT](https://www.youtube.com/watch?v=18A993m9Pm8).
 
 The reason to build this was simple: I wanted a set of boot disks that I could use
-on by 80s/90s retro PCs, to help in setting up and conducting base diagnostics on
-vintage networks, like 10Base2 Ethernet and the TCP/IP protocol.
+on 80s/90s retro PCs, to help in setting up and conducting base diagnostics on
+vintage networks, like 10Base2 Ethernet using the TCP/IP protocol.
 
-It's not meant for day-to-day use, as many things are missing.
+It's not meant for day-to-day use, as many things are intentionally left out.
 It's meant for diagnostics, not much more.
 
 
@@ -116,3 +116,13 @@ A typical command line, which will use the environment variables defined as show
 ```
 
 Please also note the further remarks in the [NIC Readme](NICS/README.md).
+
+
+## To Do
+
+Some things missing for now, that I might include eventually:
+
+* XMS RamDisk for speeding things up
+* maybe include `NC` (netcat)
+* NIC drivers autoprobing
+ 
