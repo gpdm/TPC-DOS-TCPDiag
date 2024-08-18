@@ -1,0 +1,142 @@
+------------------------------------------------------------------------
+NSET    Extract from STDIN              Ver 2.1 (c) 1997 Horst Schaeffer
+------------------------------------------------------------------------
+          Note: Setting variable is not supported under Win NT/2000/XP
+                See work-around described in NSET.W2K
+
+NSET picks a word, line or substring from STDIN and assigns it to an
+environment variable (or sends it to STDOUT). Useful if you want to
+extract data from DOS output of DIR, DATE, TIME, FIND etc. - but you'll
+probably find lots of other applications...
+
+Syntax:       NSET [options] [varname]=string
+              -------------------------------
+
+options:      /S /X /U /L /P (see below)
+
+varname:      name of environment variable
+              if the name is omitted, the result is sent to STDOUT
+
+string:       is usually a token $1...$99 for the n-th word of STDIN,
+              or $0 for a complete line.
+              But you can use any text string with one or more embedded
+              tokens to form the resulting string.
+
+Using STDIN, examples:
+
+by PIPE:      CD | NSET SDIR=$1         (SDIR=current directory)
+
+from a file:  NSET X=$3 < some.txt      (X=3rd word from some.txt)
+
+keyboard:     NSET IN=$0                (IN=input up to CR)
+
+Tokens $1..$99  refer to "words" from STDIN, defined by the following
+standard separators:
+
+              blank space
+              comma
+              semicolon
+              equal sign
+              carriage return
+              line feed
+
+For other separators or substrings see options.
+
+If the input has several lines, just count the words across lines
+(unless option /L is used to restrict extraction to a specific line).
+
+Trailing spaces are always removed. Keyboard input is limited to one
+line, terminated by ENTER (Ctrl"Z" not required).
+
+Options
+-------
+/S  additional separators (max: 24), terminated by a blank space (!)
+    As an example, you can split up the current date to translate
+    UK (with slashes) to US format (day and month swapped):
+
+    echo.|date|NSET /S/ USdate=$6-$5-$7
+                    ^^^
+    UK date output:   Current Date is  Mon, 15/07/1996
+    tokens:             $1     $2  $3  $4   $5 $6  $7
+                                            ^^^^^^^^^^
+/X  instead of /S:
+    same as /S, however, standard separators are only: space, CR and LF.
+    Comma, semicolon or equal sign have to be specified if required.
+    (This allows exclusion of comma marks in numbers, for example).
+
+    Option /X can be used without additional separators, but in any
+    case a blank space must succeed to indicate the end of option /X.
+
+/U  convert input words to upper case
+
+/L  extract from specified line (line numbers: 1..9999)
+    Tokens refer to words within this line only.
+    Example: to get the directory path of a given file %fn%
+    only the 4th line of the DIR output is used:
+
+        DIR %fn% | NSET /L4 FPATH=$3
+                         ^^
+    Special feature:
+/L? (question mark instead of a number) selects a random line.
+
+/P  position (1 is leftmost), size (default: rest of line)
+    This option will cut out a substring from a line. Tokens refer to
+    words within this substring, $0 is the complete substring.
+    In the following example 10 bytes are taken from pos.3 in line 5:
+
+        NSET /P3,10 /L5 X=$0
+              ^^^^^
+    Get 2nd word from the rest of 1st line, starting at position 14:
+
+        NSET /P14 X=$2
+
+With token $0 the complete line (or substring) is taken regardless of
+any separators. Leading spaces are not removed in this case.
+Use with option /L unless you want line #1 (or there is only one).
+
+
+STDOUT instead of variable
+--------------------------
+If you omit the variable name, the result will be sent to STDOUT.
+Note that the equal sign must not be omitted!
+Useful for testing or for redirection to a file.
+
+Example:
+        NSET /L? =$0  < taglines.lst > tagline.now
+
+Notes:
+------
+Max input size is about 60 KB (rest ignored)
+
+Errorlevel: 0: ok, 1: out of environment space or invalid options
+
+To avoid conflicts when numeric data occur in the command string,
+you may use e.g. $01 instead of $1 (because max 2 digits are read for
+tokens):
+        $15         is the 15th word
+        $015        is the 1st word succeeded by constant "5"
+
+
+More Examples:
+--------------
+    dir %file% /B | NSET /S. FN=$1      (file name without extension)
+    dir %file% /B | NSET /S. EXT=$2     (file extension only)
+    vol | NSET DRV=$4:                  (current drive)
+    echo %string%| NSET /U string=$0    (convert string to upper case)
+    echo %string%| NSET /P2,1 char=$1   (get 2nd char from string)
+
+To save and restore drive and directory in a BAT file:
+
+    CD | NSET XDIR=$1                   (save full path in XDIR)
+    -----------------
+    %XDIR%\                             (select drive *)
+    CD %XDIR%                           (select directory)
+
+    *) undocumented DOS feature: with trailing backslash the drive is
+       selected (rest ignored). Does not work under NT/2000/XP.
+
+----
+NSET is freeware by Horst Schaeffer - no warranties of any kind
+eMail: horst.schaeffer@gmx.net
+
+= 04 AUG 2002

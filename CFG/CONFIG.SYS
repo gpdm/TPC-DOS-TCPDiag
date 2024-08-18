@@ -1,0 +1,23 @@
+[MENU]
+menucolor=7,1
+menuitem=PLAIN, Plain DOS (no drivers)
+menuitem=NETHMA, DOS with HIMEM (DOS HIGH, 286+, 1+ MiB RAM)
+menuitem=NETPLAIN, DOS without HIMEM (DOS LOW, 8086/88+, < 1 MiB RAM)
+menudefault=NETHMA,10
+
+
+[COMMON]
+LASTDRIVE=Z
+FILES=20
+BUFFERS=20
+SHELL=A:\COMMAND.COM A:\ /P /E:1024
+
+[PLAIN]
+; intentionally nothing configured for plain boot
+
+[NETHMA]
+DEVICE=\HIMEM.SYS
+DOS=HIGH
+
+[NETPLAIN]
+DOS=LOW

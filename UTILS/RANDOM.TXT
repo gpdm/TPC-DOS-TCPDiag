@@ -1,0 +1,32 @@
+------------------------------------------------------------------------
+RANDOM      Generate Random Number      Ver 1.1 (c) 1997 Horst Schaeffer
+------------------------------------------------------------------------
+
+Random generates a random number within the range specified on the
+command line.  The random number is written to Standard Output
+(normally the screen) but may be redirected or piped.
+
+Syntax:  RANDOM [n],m
+         random number, range n (default=1) thru m (max 65535) to STDOUT
+
+
+Example: Using RANDOM and NSET to randomly select from four text
+         files and display to screen...
+
+         @echo off
+         random 0,3|nset random=$1
+         cls
+         type text%random%
+         set random=
+
+         In the above batch file, the random number is piped to
+         NSET, which sets the environmental variable RANDOM to 0, 1,
+         2, or 3.  The environmental variable is then used to
+         determine which of four text files is displayed: TEXT1,
+         TEXT2, TEXT3, or TEXT4.
+
+----
+RANDOM is freeware by Horst Schaeffer - no warranties of any kind
+eMail: horst.schaeffer@gmx.net
+
+- 04 AUG 2002
