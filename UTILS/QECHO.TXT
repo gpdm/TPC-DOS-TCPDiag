@@ -1,0 +1,59 @@
+------------------------------------------------------------------------
+QECHO   Quote echo                      Ver 1.3 (c) 2000 Horst Schaeffer
+------------------------------------------------------------------------
+
+QECHO supports output that is not possible with the normal ECHO command:
+
+    +  Strings in 'single' or "double" quotes marks
+    +  ASCII byte values (decimal)
+    +  Control codes with caret, like ^L (=ASCII 12)
+    +  Symbols: CR (13), LF (10), FF (12), ESC (27)
+    +  @nn - write position (extra s.below)
+
+No terminating CR/LF is output unless specified (!)
+
+    thus:         QECHO "something" CR LF
+    is same as:   ECHO something
+
+Strings may include the other type of quotes, like: 'file "%1" done'
+or "file '%1' done". The same type of quotes must be doubled if used
+within a string, for example: "file ""%1"" done".
+
+Pipes and redirections as usual. Separators (blank, comma, semicolon)
+allowed. If any invalid data occur, the rest of the line will be ignored
+(errorlevel > 0).
+
+Some examples:
+
+++  Write to a file without CR+LF
+
+    QECHO "SET X="> some.bat
+
+++  Pipe multiple lines or CR's
+
+    QECHO CR,"N",CR | format A: /q/u /v:""       (FORMAT, no prompts)
+    QECHO "D100,200",CR,"Q",CR | debug PROG.COM  (DUMP thru DEBUG)
+
+++  Send control codes to printer (without CR/LF)
+
+    QECHO FF > LPT1                           (form feed)
+    QECHO ESC "@", ESC "l" 10 > LPT1          (reset, margin /EPSON)
+
+
+Extra
+-----
+With the @-sign you can set the write position (1...) for the following
+data. This allows column aligned output, even if the length of the first
+part is variable.
+
+Example:    Qecho "%varname%" @20 "more text", CR,LF >>file.ext
+
+Another feature: A string can be input to QECHO by redirection, an then
+be completed by writing (or overwriting) something at the specified
+position. Please test to find out if you can use it...
+
+----
+QECHO is freeware by Horst Schaeffer - no warranties of any kind
+eMail: horst.schaeffer@gmx.net
+
+= 04 AUG 2002

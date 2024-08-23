@@ -10,12 +10,13 @@ but just these:
 
 * `RANDOM.COM`
 * `NSET.COM`
+* `QECHO.COM`
 
 Adapt [MKBOOT.BAT](../MKBOOT.BAT) if you want to change the file lists.
 Search for this section to adapt:
 
 ```
-	SET RUNTIMEF2=%BUILDDIR%\CFG\*.BAT %BUILDDIR%\UTILS\RANDOM.COM %BUILDDIR%\UTILS\NSET.COM
+	SET RUNTIMEF2=%BUILDDIR%\UTILS\RANDOM.COM %BUILDDIR%\UTILS\NSET.COM %BUILDDIR%\UTILS\QECHO.COM
 ```
 
 Change the `RUNTIMEF2` variable as you wish.
