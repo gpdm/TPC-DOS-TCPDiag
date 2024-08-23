@@ -26,9 +26,10 @@ No disk images are available for 320K, 180K or 160K formats.
 
 The disks include:
 
-* DOS Packet Drivers for Ne2000, 3C509, 3C905, PCNet, RTL8019, RTL8029, RTL8139
+* DOS Packet Drivers for Ne2000, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139
 * Basic mTCP diag tools
 * Trumpet TCP For DOS (just `TCPDRV`)
+* PKTMUX, Packer Drive Multiplexer
 * some utilities for the included batch files
 * runtime configuration (read more below)
 
@@ -49,14 +50,17 @@ Start by cloning this repository, and place it onto a DOS machine where you have
 Make sure the directory is placed at `C:\BUILD`. 
 
 
-Then download necessary utilities, which are not bundled in this repo.
-Read associated Read-me's in for details:
+Some utilities are bundled in this repo.
+But to fetch full upstream releases, read the
+associated Read-me's in for details:
 
 * [MTCP](MTCP/README.md)
 * [TTCP](TTCP/README.md)
 * [NTTCP](NTTCP/README.md)
+* [PKTMUX](PKTMUX/README.md)
 
-Download DOS packet drivers, as noted in:
+If the bundled drivers are not good enough,
+download DOS packet drivers, as noted in:
 
 * [NICS](NICS/README.md)
 
@@ -83,9 +87,8 @@ It can run fully interactive, but also has some preconfiguration possibilities a
 The settings for the network card and packet interface are hardcoded as follows in [AUTOEXEC.BAT](CFG/AUTOEXEC.BAT):
 
 ```
-SET PACKETINT=0x60
 SET NETIRQ=5
-SET NETIO=0x300
+SET NETIOADDR=0x300
 ```
 
 But to faciliate a more dynamic approach for runtime configuring these parameters,
@@ -93,9 +96,8 @@ you can set overrides in [SETNIC.BAT](CFG/SETNIC.BAT), i.e. like so:
 
 ```
 @ECHO OFF
-SET PACKETINT=0x60
 SET NETIRQ=10
-SET NETIO=0x300
+SET NETIOADDR=0x300
 ```
 
 `SETNIC.BAT` is not mandatory to exist.
@@ -112,7 +114,7 @@ driver automatically.
 A typical command line, which will use the environment variables defined as shown above, may look like this:
 
 ```
-\NIC\NE2000\NE2000 %PACKETINT% %NETIRQ% %NETIO%
+@\NIC\NE2000\NE2000 %PACKETINT% %NETIRQ% %NETIOADDR%
 ```
 
 Please also note the further remarks in the [NIC Readme](NICS/README.md).
@@ -125,4 +127,4 @@ Some things missing for now, that I might include eventually:
 * XMS RamDisk for speeding things up
 * maybe include `NC` (netcat)
 * NIC drivers autoprobing
- 
+* add disk free checks before copying, split on available disk space 
