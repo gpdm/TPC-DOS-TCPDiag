@@ -1,7 +1,8 @@
 # Trumpet TCP for DOS Distribution
 
-Binary files of Trumpet TCP for DOS are not included by intention.
-When downloading this repositoring, fetch 
+Binary files of Trumpet TCP for DOS are included.
+
+If in doubt, you may fetch a fresh copy from
 [tcp201.zip](https://web.archive.org/web/20040604013649/ftp://ftp.trumpet.com.au/tcp-abi/tcp201.zip)
 and unpack it into this folder.
 
