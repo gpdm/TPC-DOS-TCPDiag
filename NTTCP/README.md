@@ -1,7 +1,7 @@
 # New Trumpet TCP Driver for DOS
 
 Binary files of Trumpet nTCP for DOS are not included by intention.
-When downloading this repositoring, fetch 
+When downloading this repository, fetch 
 [ntpcdrv.zip](https://web.archive.org/web/20040604013649/ftp://ftp.trumpet.com.au/tcp-abi/ntcpdrv.zip)
 and unpack it into this folder.
 
