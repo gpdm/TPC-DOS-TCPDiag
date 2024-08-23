@@ -1,7 +1,8 @@
 # mTCP Distribution
 
-Binary files of mTCP are not included by intention.
-When downloading this repositoring, fetch 
+Binary files of mTCP are included.
+
+However, you may want to fetch a fresh copy from
 [UPX compressed binaries](http://www.brutman.com/mTCP/download/mTCP_2023-03-31_upx.zip)
 and unpack it into this folder.
 
