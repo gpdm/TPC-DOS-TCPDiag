@@ -6,7 +6,7 @@ REM * Init                         *
 REM ********************************
 
 SET BUILDDIR=C:\BUILD
-
+cd %BUILDDIR%
 
 REM ********************************
 REM * Shortcut to inline functions *
@@ -19,7 +19,7 @@ REM ********************************
 REM * copy startup files           *
 REM ********************************
 :STARTUP
-        SET STARTUPF=C:\DOS\HIMEM.SYS %BUILDDIR%\CFG\*.*
+        SET STARTUPF=C:\DOS\HIMEM.SYS CFG\*.*
 
         ECHO Copying startup files ...
         FOR %%F IN (%STARTUPF%) DO COPY %%F %DESTDRV%
@@ -32,8 +32,8 @@ REM ********************************
 REM * copy runtime files           *
 REM ********************************
 :RUNTIME
-        SET RUNTIMEF1=C:\DOS\COMMAND.COM C:\DOS\CHOICE.COM C:\DOS\FIND.EXE %BUILDDIR%\CFG\*.BAT
-        SET RUNTIMEF2=%BUILDDIR%\UTILS\RANDOM.COM %BUILDDIR%\UTILS\NSET.COM %BUILDDIR%\UTILS\QECHO.COM 
+        SET RUNTIMEF1=C:\DOS\COMMAND.COM C:\DOS\CHOICE.COM C:\DOS\FIND.EXE CFG\*.BAT
+        SET RUNTIMEF2=UTILS\RANDOM.COM UTILS\NSET.COM UTILS\QECHO.COM 
 
         ECHO Copying runtime files ...
         FOR %%F IN (%RUNTIMEF1%) DO COPY %%F %DESTDRV%
@@ -52,8 +52,8 @@ REM ********************************
         SET TTCPF=TCPDRV.EXE
 
         ECHO Copying network stack and utilities ... 
-        FOR %%F IN (%MTCPF%) DO COPY %BUILDDIR%\MTCP\%%F %DESTDRV%
-        FOR %%F IN (%TTCPF%) DO COPY %BUILDDIR%\TTCP\%%F %DESTDRV%
+        FOR %%F IN (%MTCPF%) DO COPY MTCP\%%F %DESTDRV%
+        FOR %%F IN (%TTCPF%) DO COPY TTCP\%%F %DESTDRV%
 
         SET MTCPF=
         SET TTCPF=
@@ -66,7 +66,7 @@ REM ********************************
 :NETDRV
         ECHO Copying NIC paket drivers ...
         MKDIR %DESTDRV%\NIC
-        XCOPY /E /S %BUILDDIR%\NIC %DESTDRV%\NIC
+        XCOPY /E /S NIC %DESTDRV%\NIC
 GOTO END
 
 
@@ -77,7 +77,7 @@ REM ********************************
         SET PKTMUXF=PKTMUX.EXE PKTDRV.EXE
 
         ECHO Copying Packet Driver Multiplexer ... 
-        FOR %%F IN (%PKTMUXF%) DO COPY %BUILDDIR%\PKTMUX\%%F %DESTDRV%
+        FOR %%F IN (%PKTMUXF%) DO COPY PKTMUX\%%F %DESTDRV%
 
         SET PKTMUXF=
 GOTO END
