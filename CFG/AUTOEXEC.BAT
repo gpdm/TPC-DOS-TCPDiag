@@ -110,7 +110,7 @@ GOTO SWD_DRV
         QECHO "MTU 1500" CR LF >>%MTCPCFG%
         
         CHOICE /C:YN "Use DHCP client? "
-        IF ERRORLEVEL 2 GOTO NODHCP
+        IF ERRORLEVEL 2 GOTO APIPA
 
         ECHO Loading DHCP client ...
         DHCP -retries 2 -timeout 20
@@ -127,13 +127,14 @@ GOTO ICMPRESPONDER
         ECHO Will proceed to manual IP configuration now.
         ECHO.
 
-:NODHCP
-        ECHO Use auto-config IP from 169.254.0.0/16 range instead of DHCP.
-        ECHO No collision checking will be done when trying to
-        ECHO pick a random IP from between 169.254.0.1-169.254.0.255
+:APIPA
+        ECHO Use automatic link-local ("APIPA") addressing
+        ECHO from 169.254.0.0/16 range instead of DHCP.
+        ECHO No collision checking will be done when trying to assign IP.
         ECHO.
-        RANDOM 1,254 | NSET IP=169.254.0.$1
-        SET NETMASK=255.255.255.0
+        RANDOM 0,255 | NSET IP=169.254.$1
+        RANDOM 1,254 | NSET IP=%IP%.$1
+        SET NETMASK=255.255.0.0
 
         CHOICE /C:. /T:.,2 /N "Auto-assigned address: %IP%/%NETMASK%"
 
