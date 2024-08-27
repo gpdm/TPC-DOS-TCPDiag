@@ -23,16 +23,24 @@ GOTO %CONFIG%
 
 :NETPLAIN
 :NETHMA
-REM Nothing happening here, but label must exist
-
+REM Nothing intentionally happening here,
+REM but label must exist to prevent errors.
+     
 
 REM Switch to next disk, if needed
 :SWD_DRV
-        CLS
         IF EXIST \NIC\nul GOTO SETNIC
-        ECHO Insert disk labeled
-        ECHO     DOS TCP/IP Boot Floppy, Disk 2
-        CHOICE /C:C /N "and press 'C' to continue ... "
+        CLS
+        ECHO Insert next disk to load drivers.
+        ECHO.
+        ECHO.
+        ECHO For 720K disk sets:
+        ECHO     DOS TCP/IP Diagnostics, Disk 2
+        ECHO.
+        ECHO For 360K disk sets:
+        ECHO     DOS TCP/IP Diagnostics, Disk 3
+        ECHO.
+        CHOICE /C:C /N "Press 'C' to continue ... "
 GOTO SWD_DRV
 
 
@@ -60,6 +68,12 @@ GOTO SWD_NET
         ECHO the NIC driver yourself from the shell, e.g.
         ECHO.
         ECHO   \NIC\NE2000\NE2000 %PACKETINT% %NETIRQ% %NETIOADDR%
+        ECHO
+        ECHO.
+        ECHO Please note, that drivers may be split accross
+        ECHO multiple floppy disks.
+        ECHO If you have additional floppies (disks 2,3,...),
+        ECHO check those as well.
         ECHO.
         ECHO Then type 'exit' to resume startup.
         COMMAND /K CD \NIC
@@ -71,9 +85,15 @@ REM Switch to next disk, if needed
 :SWD_NET
         IF EXIST \PKTMUX.EXE GOTO INITPMUX
         CLS
-        ECHO Insert disk labeled
-        ECHO     DOS TCP/IP Boot Floppy, Disk 3
-        CHOICE /C:C /N "and press 'C' to continue ... "
+        ECHO Insert next disk.
+        ECHO.
+        ECHO For 1.44M, 1.2M and 720K disk sets:
+        ECHO     DOS TCP/IP Diagnostics, Disk 1
+        ECHO.
+        ECHO For 360K disk sets:
+        ECHO     DOS TCP/IP Diagnostics, Disk 2
+        ECHO.
+        CHOICE /C:C /N "Press 'C' to continue ... "
 GOTO SWD_NET
 
 
