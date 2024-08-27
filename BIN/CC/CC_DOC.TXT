@@ -1,0 +1,1296 @@
+
+  ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+  ฑฑฑฑฑฑฑฑลลลลลลลลฑฑฑฑฑลลลลลลลลฑฑฑฑฑลลลลลลลลฑฑฑฑลลลลลลลลลฑฑฑฑลลลลฑฑลลลลฑฑฑ
+  ฑฑฑฑฑฑลลลลฐฐลลลลฐฑฑลลลลฐฐลลลลฐฑฑลลลลฐฐลลลลฐฑฑลลลลฐฐลลลลฐฑฑลลลลฐฐลลลลฐฐฑฑ
+  ฑฑฑฑฑลลลลฐฐฑฑฐฐฐฐฑลลลลฐฐฑฑฐฐฐฐฑลลลลฐฐลลลลฐฐฑลลลลฐฐลลลลฐฐฑฑลลลลลลลลฐฐฐฑฑฑ
+  ฑฑฑฑลลลลฐฐฑฑฑฑฑฑฑลลลลฐฐฑฑฑฑฑฑฑลลลลฐฐลลลลฐฐฑลลลลลลลลลฐฐฐฑฑฑลลลลลลฐฐฐฑฑฑฑฑ
+  ฑฑฑลลลลฐฐฑฑฑฑฑฑฑลลลลฐฐฑฑฑฑฑฑฑลลลลฐฐลลลลฐฐฑลลลลฐฐฐฐฐฐฐฑฑฑฑฑลลลลฐฐฐฑฑฑฑฑฑฑ
+  ฑฑลลลลฐฐลลลลฑฑฑลลลลฐฐลลลลฑฑฑลลลลฐฐลลลลฐฐฑลลลลฐฐฑฑฑฑฑฑฑฑฑฑลลลลฐฐฑฑฑฑฑฑฑฑฑ
+  ฑฑลลลลลลลลฐฐฐฑฑลลลลลลลลฐฐฐฑฑลลลลลลลลฐฐฐฑลลลลฐฐฑฑฑฑฑฑฑฑฑฑลลลลฐฐฑฑฑฑฑฑฑฑฑฑ
+  ฑฑฑฐฐฐฐฐฐฐฐฑฑฑฑฑฐฐฐฐฐฐฐฐฑฑฑฑฑฐฐฐฐฐฐฐฐฑฑฑฑฐฐฐฐฑฑฑฑฑฑฑฑฑฑฑฑฐฐฐฐฑฑฑฑฑฑฑฑฑฑฑ
+  ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+  ฑฑลลลลลลลลลลลลลลลลลลลลลลลลล  version 1.08  ลลลลลลลลลลลลลลลลลลลลลลลลลลลฑฑ
+  ฑฑลลลลลลลลลลลลลลลลลลลลลลลลล  28 jul  1997  ลลลลลลลลลลลลลลลลลลลลลลลลลลลฐฑ
+  ฑฑฑฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฑ
+  ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ
+                  Copyright(C) 1994-1997, Tarmo Toikkanen
+                          All Rights Reserved
+
+
+
+
+ออออออออออออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+WARRANTY DISCLAIMER ณ
+ออออออออออออออออออออพ
+
+  This software and manual are provided "as is" and without warranties
+  as to performance of merchantability or any other warranties whether
+  expressed or implied.  Because of the various hardware and software
+  environments in which this program may be used, no warranty of
+  fitness for a particular purpose is offered.
+
+  Good data processing procedure dictates that any program be
+  thoroughly tested with non-critical data before relying on it. The
+  user must assume the entire risk of using the program. Any liability
+  of the seller will be limited exclusively to product replacement.
+
+  License information is located in appendix B.
+
+
+
+อออออออออออออออัอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+QUICK OVERVIEW ณ
+อออออออออออออออพ
+
+  Controlled Copy is a file copier/mover for DOS, Windows, Windows 95 and
+  OS/2. Some of the differences with other programs are:
+  - automatic free space checking prior to copying
+  - extended file security and protection
+  - progress indicators always show what is happening
+  - fast command line operation - no menus or fancy graphics
+  - extremely fast throughput
+  - full 4DOS(tm) compatibility
+  - easy to use, intuitive operation
+  - Windows 95 long file name support
+  - over 30 command line options
+
+  Why would you use CCopy?
+  - it replaces your copy and move commands simultaneously
+  - it is faster than most other programs
+  - it has enough power and flexibility to perform very complex and
+    demanding jobs
+  - it has all the features the normal copy and move programs have
+
+
+
+อออออออออออออออัอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+WHAT IS CCOPY? ณ
+อออออออออออออออพ
+
+  Controlled Copy is a file copier/mover for DOS, Windows, Windows 95 and
+  OS/2.  It is easier to use than the conventional copier and also much
+  faster.  It also has several advanced features active at all times that
+  make file copying easier, safer and much more enjoyable.
+
+  CCopy recognizes over 30 different command line options and is thus
+  the most versatile file copier in existence. If you're familiar with
+  4DOS(tm), you know what a difference it is to be able to enter
+  several source masks to a copy-command. In addition, 4DOS has many
+  other features that make DOS much easier to use. CCopy does
+  everything that 4DOS's copy-command does and most of the time CCopy
+  doesn't even require 4DOS to be active!
+
+  CCopy will make life a lot easier for you. Automatic free space
+  checking, added file protection and progress indicators will make
+  copying chores simple and easy. With the numerous command line options
+  CCopy can do just about anything, including file moving, comparing and
+  splitting, subdirectory copying, program updating/downdating, sound
+  alarms, file renaming and lots, lots more! The only way to believe it
+  is to try it.
+
+  To get the full benefit of all the advanced features CCopy can offer you,
+  it is recommended that you read this entire documentation at least once
+  through.  Especially the chapter "Tips and Techniques" is recommended,
+  and "Command Line Options" also contains important information.
+
+
+
+อออออออออออออออัอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+WHY USE CCOPY? ณ
+อออออออออออออออพ
+
+  There are several reasons for using CCopy exclusively. After you've
+  learned to rely on the benefits CCopy can provide, normal copiers will
+  simply seem inadequate for your purposes. Remember that with CCopy you
+  can do some things that are simply *impossible* using any other copier!
+  Some important facts are listed here.
+
+  1. Automatic free space checking. CCopy always checks that the
+     destination disk contains enough free space to complete the command
+     it is given. Cluster sizes are taken into account and subst-commands
+     are transparent. With CCopy, it's impossible to copy a file and
+     run out of free space (unless you specifically disable free space
+     checking).
+
+  2. Progress indicators. CCopy always shows information on the screen,
+     unless you want something else, of course. Each file is shown on its own
+     line with its name, size, progress indicators and the estimated time
+     left.
+
+  3. Automatic disk change. If you've chosen to continue copying even
+     if there isn't enough space for all files CCopy will pause when
+     it has copied all it can and asks you to change the disk. You can
+     then enter another disk to the drive and press any key to
+     continue or alternatively skip the current file. It can't be much
+     easier than this.
+
+  4. Fast file transfer speeds. CCopy uses large data buffers to
+     achieve maximum speed while copying files. With large files, CCopy
+     is considerably faster and with small files as fast as the copy
+     command. More detailed results are shown in Appendix A, "Speed
+     Comparison".
+
+  5. Security and protection. CCopy *never* overwrites another file
+     before asking for permission, unless you specify otherwise in the
+     command line. Overwriting read-only files requires another
+     confirmation so CCopy is much safer to use than other copiers.
+
+  6. Ease of use. Command line options can be entered with considerable
+     freedom and source and destination masks are also parsed with a
+     lot more thought than is usually the case. CCopy also has a
+     feature called Automatic Subdirectory Creation. You can read more
+     on this from the next chapter.
+
+  7. Versatility. With CCopy you can easily accomplish complex things
+     that would otherwise require batch files or even separate
+     programs. Most things can be done with a normal copier but usually
+     require dozens of separate copy commands with different
+     parameters. And some are simply impossible to do. Examples can be
+     found in the chapter "Tips and Techniques".
+
+
+
+ออออออออออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+HOW TO USE CCOPY? ณ
+ออออออออออออออออออพ
+
+  Syntax: CC source1 [source2... destination] [options]
+
+  Brackets mean optional entries. This may look cryptic but is actually
+  the same syntax 4DOS's copy uses. What does this mean, then? You can
+  run CCopy with just one argument which is the source mask. In this
+  case the destination will be the current directory. If you specify
+  more than one mask, then the last one will be used as the destination
+  and all the others are source masks.
+
+อออออออ
+
+  Command line options can be entered *anywhere* in the command line. A
+  command line option is always located between a slash (/) and a space
+  ( ). You can enter several options together one after the other, but
+  you must separate them from normal masks. These following examples
+  are all identical to CCopy:
+
+  CC *.ZIP A: /V- /P /R /4
+  CC/p *.zip /v-4r A:
+  CC *.zip /p4rv- a:
+
+  As you can see, all options are case-insensitive. They can be entered
+  one after the other. As long as the they are surrounded by spaces on
+  both sides and have a slash in front of them they are considered to be
+  command line options.
+
+อออออออ
+
+  You can always trim source and destination masks. When you want to
+  copy all the files from some location, you would normally type "*.*"
+  after the path. But not with CCopy! A simple dot (.) is the same
+  thing as a dot means "current directory". In fact, you don't even
+  need that dot. It's enough to specify the path and CCopy will do the
+  rest.
+
+  These two commands mean the same thing:
+  CC *.* A:
+  CC . A:
+
+  These also mean the same thing:
+  CC A:*.*
+  CC A:.
+  CC A:
+
+  These also mean exactly the same thing:
+  CC A:*.* D:\FILES\*.* .
+  CC A:. D:\FILES\. .
+  CC A: D:\FILES\ .
+  CC A: D:\FILES .
+
+  Notice the dot at the end of the command. The files from drive A: are
+  not copied to D:\FILES but rather the files from A: and D:\FILES are
+  copied to the current directory on the current drive.
+
+อออออออ
+
+  Another feature is directory backtracing that is also found in 4DOS.
+  Normally two dots mean the parent directory. Now you can enter three
+  dots to access the parent directory of the parent. And four dots
+  refer to the next parent, etc. Here are some examples:
+
+  C:\FILES> CC .. D:
+  C:\FILES\NEW> CC ... D:
+  C:\FILES\NEW\TODAY> CC .... D:
+  C:\FILES\NEW\TODAY\UTILS> CC ..... D:
+
+  All of these commands will copy the files from the root of C: to
+  drive D:. This feature may be useful in certain situations.
+
+อออออออ
+
+  [y/N/a/s/r/?]
+  This is part of a prompt you will see several times when using CCopy.
+  It follows all confirmation prompts so you'd better know what the
+  choices are.
+
+  ?:        This will show the prompt in it's long format:
+            (Y)es,(N)o,(A)ll,(S)kip all,(R)ename
+  Yes:      This will accept the file and copy/move it.
+  No:       This will skip the file and proceed to the next file.
+  All:      This will accept the file and all other files that follow.
+  Skip all: This will skip the file and all other files that follow.
+  Rename:   This will allow you to edit the file's destination name.
+
+  Notice that answering a certain prompt, for example one about overwriting
+  another file, only affects similar situations later on. So if you answer
+  "Skip all", further files are still copied as long as they don't
+  overwrite other files.
+
+อออออออ
+
+  CCopy recognizes the environment variable CCOPY and will read its
+  contents before the command line is processed. You can thus easily
+  specify your favourite options in there and don't have to worry about
+  remembering to add them to every command you make.
+
+  As the variable is handled before the actual command line, you can
+  always disable any options in the command line in case you don't want
+  to use them in a certain situation.
+
+อออออออ
+
+  CCOPY CON: The console interface is improved over the conventional
+  copier, and now you can enter ANY characters to the file - using
+  ALT-keypad, CTRL-letters or normal characters or even ESC, backspace
+  and CR and CR/LF codes. This means that pressing any key will output
+  it to the file.
+
+  If, on the other hand, you want to erase the last character entered,
+  merely pressing backspace would just echo ascii 8 to the file. By
+  depressing SHIFT, backspace will remove the last character, and the
+  enter key will echo a CR/LF sequence instead of the plain CR code.
+  Also, you can finish typing by pressing SHIFT-CTRL-Z (or
+  SHIFT-CTRL-C), so that the ^Z-character isn't written to the file.
+  All the characters are shown on the screen using direct video memory
+  manipulation, so that the smileys are there too.
+
+อออออออ
+
+  You can copy files to several destinations with a single command. Use a
+  colon between all destinations. Example:
+
+  CC *.* D:\BACKUP : A:\
+
+  This will copy all files from the current directory to D:\BACKUP and A:\.
+  You can use as many destinations as you want, as long as your OS doesn't
+  run out of file handles, as each destination may keep one file open if the
+  source file is large enough.
+
+อออออออ
+
+  You can make CCopy run the same command over and over again, by adding a
+  double-colon after the command. Example:
+
+  CC A: ::
+
+  This will copy all files from A: to the current directory. After all files
+  are copied, you will get a prompt to restart or quit. You can now change
+  the diskette in drive A: and press any key to get another copy.
+
+  Note: this can be used with /L to effectively combine files previously
+  split with /L.
+
+
+อออออออออออออออออออัอออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+REGISTERED VERSION ณ
+อออออออออออออออออออพ
+
+  The registered version has several enhancements over the shareware
+  version. The most notable of these is the larger data transfer
+  buffer. While the SW-version uses a single file buffer of 48kB, the
+  registered version uses all available memory (in DOS version,
+  OS/2-version uses only a moderate amount). This naturally improves
+  file transfer speeds with large files and you can see the difference
+  in Appendix A.
+
+  Another added bonus is the pause-capability. By depressing both shift
+  keys for a while, the copying is paused and you are given a choice:
+  you can Resume copying, Skip the current file or Abort copying.
+  This can be used if you suddenly find that CCopy is copying a large
+  file that you didn't want to copy. If copying to disks, it's much
+  easier to just pause (with the double shift keys) and choose to Skip
+  the file. Any portion that is already copied will be removed.
+
+  The registered version is also capable of logging all events to a log
+  file.  This information can be used to build statistics of your copying
+  activity and to enable the UNDO utility to cancel the last copy command
+  executed.  This feature isn't found in any other file copier in the
+  world.
+
+  Registered users also have a configuration utility that will allow
+  them to brand different command line options into the executable. And
+  don't forget the unlimited free technical support via Internet that
+  all registered users have.
+
+  And, most importantly, you will support me and the shareware-concept.
+  Only by registering will you encourage me to continue developing this
+  program. While it's a good utility as it is, constant development
+  ensures that no bugs will remain forever and new features are always
+  implemented.
+
+
+
+อออออออออออออออออออออัอออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+COMMAND LINE OPTIONS ณ
+อออออออออออออออออออออพ
+
+  You've already seen how to enter command line options on the command
+  line in chapter "How to Use CCopy?". Most options can be disabled by
+  adding a minus-sign (-) after them and some options behave
+  differently when followed by a plus-sign (+). All options are
+  explained below with examples and tips on usage.
+
+  Here's a very short list of the few options you might want to try out
+  first. They're all pretty simple to use and do what you expect them
+  to do.
+ÿÿ
+/A   append   Append source files to destination
+/B   beep     Activate sound alarms
+/M   move     Move source files
+/N   nothing  Write nothing on disks, good for trying out commands
+/P   prompt   Ask confirmation for every file
+/S   subdirs  Copy subdirectories with directory structure
+/?   help     Shows help. Add a letter after it for detailed info.
+,mask         Files that match a mask after a comma are not copied
+ÿ
+  Here are all the options CCopy understands. They are grouped into
+  three categories and sorted alphabetically. If you don't understand
+  the effects of a certain option, feel free to ignore it. You can also
+  notify me of this shortcoming and I'll try to rectify the situation
+  for the next release.
+ÿÿÿ
+DISPLAY
+/Vx  view      0-none 1-brief 2-stats 3-progress 4-oneliner 5-twoliner
+/Tx  totals    0-none 1-brief 2-full 3-extended
+/Q   quiet     Same as /V0T0
+/Q+  quiet     Non-interactive mode - displays nothing, asks nothing
+/?   help      Shows help. Add a letter after it for detailed info.
+
+SELECTION
+/C   changed   Copy only if older file exists
+/H   hidden    Copy hidden and system files and retain attributes
+/K   keep      Do not overwrite any existing files
+/N   nothing   Write nothing on disks
+/P   prompt    Ask confirmation for every file (overrides /U and /C)
+/R   replace   Overwrite existing files, /R+ overwrites read-only files
+/U   update    Copy only files that don't overwrite newer files
+/X   xisting   Copy only files that already exist
+/1   archive   Only files with the archive-bit set are copied
+/2   archive   As above but clears the bit after copying
+/[]  range     File selection ranges (size,date,time)
+,mask          Files that match a mask after a comma are not copied
+;mask          Mask inherits the same path as the previous mask
+
+MISCELLANEOUS
+/4   4DOS      4DOS description support
+/A   append    Append source files to destination, /A+ for text files
+/B   beep      Activate sound alarms
+/D-  file      Target is a file
+/D   dir/file  Prompt for file/dir
+/D+  dir       Target is a directory (default)
+/E   extension Change existing files' extensions
+/F   file comp Compare files after copying
+/G   gather    Copy subdirectories w/o structure (overrides /S)
+/I   ignore    Ignores insufficient free space (disables source scan)
+/J   jump      Jump to destination directory (DOS version only)
+/L   cleave    Cleave (split) file to several disks or recombine parts
+/M   move      Move source files instead of copying
+/O   optimize  Optimize files for best fit to several disks
+/S   subdirs   Copy subdirectories with directory structure
+/S+  subtree   Copy source directory tree under the destination
+/V   verify    /V+ enables, /V- disables DOS verify flag during copying
+/Z   zap       Delete dest (Z+ no prompt),/ZZ w/subs,/ZZZ erase drive
+@comfile       Read 'comfile' into the command line
+=logfile       Write event log to 'logfile'
+ÿ
+
+   Below are listed all the options with a detailed description, tips
+   on usage and other notes. They are sorted in a good order in which
+   you can read and understand them. You can also access these
+   descriptions by using CCopy's online help system (type CC/?? for
+   instructions).
+
+
+DISPLAY
+
+ÿ/Vx  view      This option controls the information shown on the
+                screen during copying. The number after the letter V
+                defines screen output, and the choices are:
+                0: None. Nothing is shown on the screen.
+                1: Brief. Only the file names are shown.
+                2: Stats. File names and sizes are shown.
+                3: Progress. File names and sizes with progress
+                   indicators are shown. (default)
+                4: Oneliner. Like 3 but doesn't change the line and
+                   the end result looks like 0.
+                5: Twoliner. Like 4 but shows source and destination
+                   paths during copying.
+
+           TIP: You can use /V4T0 in batch files when you want to see
+                the progress indicators but don't want to mess up
+                the screen afterwards.
+
+ÿ/Tx  totals    This option controls the information shown on the
+                screen after copying is finished. The number after the
+                letter T defines screen output, and the choices are:
+                0: None. Nothing is shown on the screen.
+                1: Brief. Number of files copied and skipped with total
+                   sizes.
+                2: Full. Like 1 but free space, total copying time,
+                   copying speed and buffer size are shown.
+                3: Extended. Shows amount and total size of source files
+                   before copying. (default)
+
+           TIP: /T2 does a free space check after copying, so /T1 may
+                be marginally faster when copying to diskettes without any
+                kind of disk caching.
+
+ÿ/Q   quiet     This option does exactly the same thing as the two
+                options /T0 and /V0. This means that nothing is shown
+                on the screen during or after the copying, so CCopy
+                operates quietly.
+
+           TIP: Use /Q (or /V0T0) in batch files where you want copying
+                done invisibly. If, on the other hand, you would like
+                to see the progress indicators without leaving any
+                traces on the screen, use /V4T0 (or /QV4.
+
+ÿ/Q+  quiet     This is a stronger version of /Q. It prevents CCopy from
+                displaying anything (like /Q), but will also prevent CCopy
+                from asking anything. CCopy will not ask anything under any
+                circumstances (excluding the double-shift pause). You can
+                force normal output with the /V and /T options if you want.
+
+                If you're appending files, use /A+ if you want CCopy to append
+                them as ascii files. Otherwise they will be treated as binaries
+                and appended without exception. If you're using zapping, add
+                a plus after them to force them. Without a plus they will be
+                ignored for security reasons.
+
+           TIP: Use /Q+ when executing CCopy from a batch file or under any
+                situation that must not require any input from the user.
+
+ÿ/?   help      If you just type CC, you are shown a short list of the
+                basic options. CC/? will show the complete list in two
+                pages. But CCopy also has an online help system. If you
+                want to see the information concerning a certain
+                command line option, just add it after the question
+                mark. This means that CC/?M will show information on
+                the Move-option and CC/?; will tell you how to use the
+                include lists. CC/?? shows this text.
+ÿ
+
+SELECTION
+
+ÿ/N   nothing   This option is the ultimate safety switch. If you
+                insert this on the command line, CCopy is guaranteed to
+                do absolutely nothing. This may seem a bit peculiar,
+                but what actually happens is that ALL disk writes are
+                disabled. This means that no files are created,
+                renamed or deleted, no directories are created or
+                removed, zapping is disabled and so on.
+                CCopy will appear to operate as usual and will still
+                read the source files normally, but nothing is ever
+                written on any disks.
+
+           TIP: If you're not sure what a certain command will do, add
+                /N after it and execute it without worries. Whatever
+                CCopy will seem to do is not actually done, so your
+                disks are completely safe. This is great for testing
+                out some of the more complex commands without any risk.
+
+ÿ/R   replace   Use /R to force CCopy to overwrite any files it needs
+                to. This is normally not needed as you can simply
+                activate this from the first confirmation prompt CCopy
+                provides (by choosing the All-option). A minus-sign (-)
+                will disable this option.
+
+           TIP: This can be combined with one of the filters (X,U,C,P)
+                to produce an automated filtered copy which requires no
+                user interaction.
+
+ /R+  replace   This is the stronger version of /R and automatically
+                overwrites read-only files. Without this, CCopy will
+                issue another confirmation prompt for each read-only
+                file it's about to overwrite. This option can also be
+                activated from the first read-only confirmation prompt
+                (by choosing the All-option).
+
+           TIP: Use one of these in a batch file that you know will
+                overwrite potentially read-only files and needs to operate
+                on its own, without any interaction with the user.
+
+ÿ/K   keep      This is the opposite of /R and will force CCopy to
+                automatically skip any files that would overwrite other
+                files. This option can also be activated from the first
+                overwrite prompt CCopy issues (by choosing the
+                Skip-option). A minus-sign (-) will disable this
+                option.
+
+           TIP: Use this in a batch file that needs to operate without
+                user interaction and must not overwrite any files.
+
+ÿ/H   hidden    When you add this option to the command line, CCopy
+                will copy all files, including hidden and system files.
+                CCopy also retains the files' attributes which means
+                that when you copy read-only files the destination file
+                will be read-only as well. Without this option the file
+                would be changed into a normal file. A minus-sign (-)
+                will disable this option.
+
+           TIP: You can use this when copying files from one disk to
+                another to ensure that all files are really copied and
+                no hidden files are left out.
+
+       WARNING: Be careful when using this with /M, as you can
+                accidentally move important system files and cause
+                problems to your system.
+
+ÿ/X   xisting   This is the simplest filter (X,U,C,P) CCopy knows and
+                one of the more useful ones. If this option is
+                specified in the command line, CCopy will filter out
+                all files that would not overwrite another file were
+                they copied. A minus-sign (-) will disable this option.
+
+          NOTE: Filters (X,U,C) only skip certain files. Use /R to
+                force automatic operation. You can only have one filter
+                in use at a time.
+
+           TIP: Use this to backtrack an accident. If you copy or
+                extract several files to a wrong directory which has older
+                files, /X is the easiest way to clean that directory.
+                Just copy/open the same files to another, empty
+                directory and then move the accidental files with /X to
+                that directory. Only they are moved and other files are
+                left where they are.
+
+ÿ/U   update    Update is one of CCopy's filters (X,U,C,P). /U will
+                filter out files that would overwrite a file that is
+                not older than the source file. This means that CCopy
+                will accept only files that don't overwrite other files
+                or overwrite files older than themselves. A minus-sign
+                (-) will disable this option.
+
+          NOTE: Filters (X,U,C) only skip certain files. Use /R to
+                force automatic operation. You can only have one filter
+                in use at a time.
+
+           TIP: You can use /U to update programs and backup files. All
+                new files are accepted and only those that would
+                replace newer files are skipped.
+
+ÿ/C   changed   Changed (or freshen) is one of CCopy's filters
+                (X,U,C,P). /C will filter out all files that don't
+                already exist and also all files that will overwrite a
+                file that is not older than the source file. This means
+                that CCopy will accept only files that overwrite files
+                older than themselves. A minus-sign (-) will disable
+                this option.
+
+          NOTE: Filters (X,U,C) only skip certain files. Use /R to
+                force automatic operation. You can only have one filter
+                in use at a time.
+
+           TIP: /C is good for updating small programs of which you
+                keep only some files. When you acquire a newer version,
+                just copy the files with /C to the directory where the
+                older files are. This way no additional, unneeded files
+                are copied.
+
+ÿ/P   prompt    Prompt is the interactive filter (X,U,C,P). It will
+                force CCopy to issue a confirmation prompt for each
+                file copied. With /P you can easily select the files
+                you want from a long list of files. The confirmation
+                prompt is very versatile and can be automated to
+                accept or skip all following files. A minus-sign (-)
+                will disable this option.
+
+           TIP: When you want to copy certain files that can't be
+                easily selected with source masks, exclude masks,
+                letter selection, selection ranges or other filters,
+                use /P to do the job. This way you can choose the
+                procedure for each file individually.
+
+ÿ/1   archive   This is the same as XCopy's /A-option. It copies only
+                files with their archive attribute set. A minus-sign
+                (-) will disable this option.
+
+ÿ/2   archive   This is the same as XCopy's /M-option. It copies only
+                files with their acrhive attribute set and removes it
+                after a successful copy. A minus-sign (-) will disable
+                this option.
+
+ÿ/[]  range     Anything found between "/[" and "] " is considered to
+                be a 4DOS selection range. There are three types: size,
+                date and time. For examples, see chapter "4dos
+                features".
+
+ÿ,mask          Exclude mask. Any file mask that is preceded by a comma
+                (,) is an exclude mask. No path is allowed, only a file
+                name mask. If a file matches any specified exclude
+                masks it will be ignored. With subdirectory copying all
+                exclude masks affect all files in all directories.
+
+           TIP: Use an exclude mask when it's easier to define which
+                files NOT to copy, rather than which files should be
+                copied.
+
+ÿ;mask          Include list. Any file mask that is preceded by a
+                semi-colon (;) will be given the same drive and path
+                than the mask before it.
+
+           TIP: When you have to copy several individual files from a
+                directory, type the path for just the first file and
+                use the semi-colon in front of the others.
+
+       WARNING: CCopy uses the last mask as the destination even if
+                it's part of an include list. Don't forget the final
+                dot (.) when copying several files to the current
+                working directory.
+ÿ
+
+MISCELLANEOUS
+
+ÿ/4   4DOS      This option activates 4DOS description support. With
+                this feature enabled, CCopy checks for a (possibly
+                hidden) file named DESCRIPT.ION and reads any comments
+                it has and updates them as files are copied. A
+                minus-sign (-) will disable this option.
+
+           TIP: If you use this, it's best to add it to your CC alias
+                statement so it's on at all times.
+
+ÿ/A   append    This option will force CCopy to copy all source files
+                one after the other to the destination file. This
+                option can't be used with the /M option for security
+                reasons. CCopy checks the file for an end-of-file
+                character and will prompt you whether or not it should
+                be removed before another file is appended to it. For
+                text files, removing the EOF-character is recommended.
+                A minus-sign (-) will disable this option.
+
+ /A+  append    This will assume that the files are all text files and
+                should the EOF-character be found, it will be removed
+                automatically.
+
+           TIP: You can also use plus-signs (+) to append files, just
+                like in the conventional copier. This method, however
+                is much more limited as it cannot handle wildcards. Use
+                whichever method you prefer.
+
+ÿ/B   beep      This will activate CCopy's sound alarms. Whenever CCopy
+                needs you to answer a prompt, a sound alarm will be
+                emitted. Another alarm will be sounded when the copying
+                is finished. A minus-sign (-) will disable this option.
+
+           TIP: Use this for those copies that take a long time. Then
+                you don't have to watch the screen the whole time as
+                you can hear when the copying is done or your input is
+                required. When copying to multiple disks, this is very
+                useful.
+
+ÿ/D-  file      Target is a file      \  THESE ARE OBSOLETE AND
+                                          SHOULD BE IGNORED
+ /D   dir/file  Prompt for file/dir    when target doesn't exist and
+                                         multiple files are copied
+ /D+  dir       Target is a directory /
+
+ÿ/V   verify    This option will turn the DOS verify flag on during
+                copying. /V- will in turn disable it.
+
+           TIP: Use this if you don't want to keep the verify flag
+                slowing things down at all times but want the security
+                active during file copying.
+
+ÿ/F   file comp With this option, CCopy will perform a bit-by-bit
+                comparison between the source file and the destination
+                file to assure that no write errors have occured.
+                Smartdrive and compatible disk caches will be flushed
+                so that the comparison will be done from the disk, not
+                the cache. The DOS verify flag will be activated when
+                /F is specified. A minus-sign (-) will disable this
+                option.
+
+           TIP: This is useful when copying files to diskettes. Usually
+                DOS verify is sufficient, but sometimes you may want to
+                make absolutely sure that no errors have occured.
+
+ÿ/S   subdirs   If you specify /S, CCopy will copy files from all the
+                subdirectories of the source directory as well. Only
+                one source flag is accepted for security reasons. The
+                directory structure will be built to the destination
+                exactly as it originally was. A minus-sign (-) will
+                disable this option.
+
+           TIP: Use this to copy large multi-dir programs to another
+                location. You can also use /M to move the program. You
+                can even copy the whole structure onto multiple disks
+                should you want to, although it's not recommended. You
+                should rather compress the program into an archive and
+                use Cleave (/L) to copy it to the diskettes.
+
+ /S+  subtree   This differs from the normal /S in one aspect: the
+                source directory will be created under the destination
+                directory rather than just copying the files into the
+                destination directory.
+
+           TIP: This option is one of the most useful and powerful
+                features CCopy has. With just a single command you can
+                move or copy an entire multi-dir program to another
+                location without needing a single mkdir or rmdir
+                command.
+
+ÿ/G   gather    Gathering will scan the directory tree just like /S,
+                but it will not recreate the subdirectories to the
+                destination. A minus-sign (-) will disable this option.
+
+           TIP: Use this to copy certain files from a directory tree to
+                a single directory for easy viewing and/or
+                manipulation. /E is also useful in this respect.
+
+ÿ/E   extension This option will disable all overwrite prompts.
+                Instead, CCopy will rename the original file's
+                extension so that the copying will not overwrite any
+                files. A minus-sign (-) will disable this option.
+
+           TIP: Use this with the Gather-option to assure that all
+                files found are copied and none are overwritten.
+
+ÿ/J   jump      This simple little option will, after copying, change
+                the current working directory and drive to the
+                destination directory. A minus-sign (-) will disable
+                this option.
+
+           TIP: Use this whenever you copy files to a directory with a
+                long path name and you intend to change to that
+                directory right after copying. This will save you a lot
+                of work as you have to type the path just once.
+
+ÿ/I   ignore    Ignores insufficient free space. In effect this option
+                disables the source file scan that CCopy performs before
+                copying the files. This will speed up the process by a
+                marginal amount (although without any disk caching or on a
+                CD-ROM drive the savings can be noticed).
+
+                This will also mean that CCopy cannot show the progress
+                indicators, as it doesn't know the total amount of files.
+                CCopy will prompt whenever a file doesn't fit on the
+                destination drive, but will not prompt if all of the files
+                cannot fit - as it doesn't know whether this is the case or
+                not.
+
+ÿ/L   cleave    The source files will be copied to the destination
+                (usually a diskette drive) and when the disk runs out
+                of space, you can change the disk and copying will be
+                resumed. This will effectively split the large file
+                into several chunks that fill their disks completely. A
+                minus-sign (-) will disable this option.
+
+                Successive parts of the file will be numbered with digits in
+                their extensions.
+
+           TIP: To recombine the chunks, you can proceed in several ways. You
+                can simply just append them together one by one (using any
+                copier) or you can use /L and combine it with CCopy's loop
+                capability (double-colon after the command). Then you merely
+                have to switch disks and press any key to append the next
+                chunk to the total file.
+
+ÿ/M   move      CCopy is a file mover as well as a copier. When you
+                specify the Move-option, CCopy will actually move the
+                files if it can, instead of just copying them and
+                removing the source files afterwards. CCopy sees
+                through any substed drives and will move the files if
+                they really reside in the same drive.
+
+                When moving files from one drive to another, moving is
+                impossible so CCopy will copy them as usual and remove
+                the source files after copying them. A minus-sign (-)
+                will disable this option.
+
+           TIP: Use /M whenever you need to move files. Most of the
+                time you're moving withing a single drive and CCopy can
+                move the files at an extremely fast rate.
+
+ÿ/O   optimize  As CCopy can automatically copy files to several
+                diskettes, it's only natural that CCopy can also do the
+                job well. When /O is defined, CCopy will store
+                information concerning the source files' sizes to
+                memory and when copying, will copy the files in
+                descending order of size and continue until the disk
+                is absolutely filled as well as possible. Note that
+                all source files need to be in the same directory. A
+                minus-sign (-) will disable this option.
+
+           TIP: Use /O whenever you're copying several small to medium
+                sized files to several diskettes. The difference in
+                wasted free space is tremendous.
+
+ÿ/Z   zap       Zapper will remove the files from the destination
+                before copying the source files. A confirmation prompt
+                is always issued with the complete mask that will be
+                removed. A minus-sign (-) will disable this option.
+
+           /Z+  No confirmation prompt is issued. DANGEROUS!
+
+           /ZZ  This removes the destination directory with all its
+                subdirectories. VERY DANGEROUS!
+
+           /ZZ+ This removes the destination directory with all its
+                subdirectories without any confirmation. EXTREMELY
+                DANGEROUS!
+
+           /ZZZ This removes the whole destination drive, including all
+                subdirectories and files. VERY DANGEROUS!
+
+       WARNING! Zapping is extremely dangerous and careless use can
+                easily result in loss of data. Use these only after
+                making sure you know what you're doing. Try them with
+                the /N option first.
+
+           TIP: Although quite dangerous, these are good for example
+                when you want to clean a diskette before copying files
+                into it. Note that when you change a disk CCopy will
+                reZap the new disk as well.
+
+ÿ@comfile       Command file. The file specified after the at-sign (@)
+                will be read and processed just like the normal command
+                line.
+
+           TIP: This can be useful if you have a list of files you want
+                to copy in a file. Just specify the list file after an
+                at-sign and its contents (the list of files) is
+                processed just as if you had entered it on the command
+                line.
+
+ÿ=logfile       Log file. The file specified after the equal-sign (=)
+                will be opened and all copying activity will be
+                appended to it. This information can be used to build
+                statistics of your copying activity and to activate the
+                Undo program. Only works in the registered version.
+
+           TIP: If you use this, it's best to specify it in an alias or
+                batch file so that it's always active.
+ÿ
+
+
+ออออออออออออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+TIPS AND TECHNIQUES ณ
+ออออออออออออออออออออพ
+
+COPYING SEVERAL FILES TO DISKETTES
+
+  Use /O to ensure all disks are filled to maximum capacity. /B is also
+  useful to get a sound alarm when you need to change diskettes.
+
+  CC C:\FILES\MISC A: /ob
+
+
+COPYING LARGE FILES TO DISKETTES:
+
+  If you need to copy a file of several megabytes to diskettes, you can
+  use /L to cleave the file neatly to the disks. You might also want to
+  use /V or /F to make sure you catch any disk errors during copying.
+  /B is always useful when doing long copies. If you're sure you don't
+  need any possible contents the disks may have, /ZZ, /ZZ+ or /ZZZ can
+  be used as well.
+
+  CC BIGFILE.ZIP A:\ /lfbzz+
+
+  When you need to reassemble the chunks, use /L again. Remember to add the
+  double colons after all other parameters so CCopy loops through all the
+  disks you provide.
+
+  CC A:BIGFILE.* /lb ::
+  CC A:BIGFILE.ZIP /lb ::
+
+  You can also use normal append. Double colons are not necessary, but will
+  speed up the process as you don't need to run the program again after
+  each disk.
+
+  CC A:BIGFILE.* BIGFILE.ZIP /AB ::
+
+
+MOVING MULTI-DIR PROGRAMS
+
+  You probably have numerous large programs, like Windows or commercial
+  games. These often have subdirectories and copying or moving them can
+  be quite difficult. But CCopy is designed to take care of this
+  problem as well. /S+ is the option to use here. With large programs,
+  it's also good to specify /H so that any hidden files are processed
+  as well.
+
+  OK, suppose you have WordPerfect in C:\TOOLS\WP but you'd like to
+  move it to C:\TEXTUTIL\WP. With CCopy, you only need one command.
+
+  CC C:\TOOLS\WP C:\TEXTUTIL /hms+
+
+  /S+ is the key element here. It will create a directory called WP
+  under the destination directory, thus creating C:\TEXTUTIL\WP. All
+  the files will then be moved to that directory and all subdirectories
+  will be moved as well. And if you just want to copy the program
+  instead of moving it, leave out /M.
+
+
+COPYING FILES TO A NEW DIRECTORY
+
+  This is extremely easy. If you're copying several files, the
+  destination directory will be created if it doesn't exist. When
+  copying a single file, it will be copied to another name, but using a
+  backslash after the destination will force CCopy to make the directory.
+
+  CC *.* C:\NOTEXIST          - will create the directory
+  CC ONEFILE.EXE C:\NOTEXIST  - will copy the file into a file NOTEXIST
+  CC ONEFILE.EXE C:\NOTEXIST\ - will create the directory
+
+
+COPYING EVERYTHING BUT THESE
+
+  Sometimes it's easier to tell which files NOT to copy, instead of the
+  files you WANT to copy. For this reason CCopy has exclude masks. The
+  following commands are identical to CCopy.
+
+  CC *.*. A: ,*.exe
+  CC . ,*.exe a:
+
+
+ACCIDENTS AND RECOVERY
+
+  Everyone has sometimes made an error. Instead of copying those 50
+  files to their proper directory, you've accidentally copied them to
+  the wrong drive or wrong directory. Suppose you want to copy the
+  files from D:\FILES to C:\FILES.
+
+  D:\FILES>cc *.* C:
+
+  This command is quite dangerous, as you can't be sure of the current
+  working directory on drive C. If it's correct (\FILES) then there's
+  no problem, but it could just as well be \WINDOWS and then you have
+  your files mixed up in C:\WINDOWS. How can you get them out of there?
+
+  D:\FILES>cc C: /MRX
+
+  This simple command will rectify the situation immediately, if the
+  working directory on drive C is still \WINDOWS. The command will move
+  (/M) all files from C:\WINDOWS back to the directory where you first
+  started copying from. It will also replace (/R) all files that do
+  exist. And, most importantly, it will copy only those files that
+  already exist (/X) in D:\FILES.
+
+  This means that all the files that were in C:\WINDOWS originally will
+  still be there but all the mistakenly copied files are removed. After
+  this you can do the original copy command, the correct way.
+
+  D:\FILES>cc *.* C:\FILES\
+
+
+  Another source of misplaced files are file compressors. When opening
+  a compressed archive, you can quite easily open the files to the
+  wrong directory:
+
+  D:\ZIP>pkunzip -d bigpack.zip C:
+
+  Now, if your working directory of drive C were \WINDOWS, then you
+  could have unwanted files AND subdirectories, and lots of them.
+  There's really no easy way to remove them, at least, there hasn't
+  been before CCopy. You now need two commands to clean up the mess.
+
+  D:\ZIP>pkunzip -d bigpack.zip C:\TESTDIR\
+  D:\ZIP>cc C: C:\TESTDIR\ /MRXS
+
+  First, you need to open the archive to the correct place. Then we use
+  /X with /M to save the day again. /R will automate the procedure and
+  /S is now needed so that the subdirectories are scanned as well.
+  CCopy will even remove the extra subdirectories for you, automatically!
+
+
+
+ออออออออออออออัออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+4DOS FEATURES ณ
+ออออออออออออออพ
+
+  CCopy supports all the features of 4DOS's copy program even if 4dos
+  isn't the active command interpreter. For those who do not use 4dos, a
+  brief explanation is provided. Note that many of these features are
+  more advanced than those of 4dos copy. 4DOS is the registered
+  trademark of JP Software Inc.
+
+EXTENDED FILEMASKS:
+  Normal DOS interprets *C*.EXE as *.EXE, but 4dos correctly picks out
+  the files with the letter 'C' in them.  CCopy does that as well.  The
+  OS/2-version also supports long file names as specified by the HPFS.
+  The DOS version supports long file names under Windows 95.
+
+EXTENDED COMMAND LINE:
+  4DOS can use a command line of up to 255 characters, while DOS only
+  127 (OS/2: normal length is 512, 4os2 uses 1024 characters). CCopy can
+  read 4dos command lines of any length.
+
+INCLUDE LISTS:
+  Starting a mask with a semi-colon (;) adds the directory of the
+  previous mask to it.
+
+  CC C:\FILES\*.EXE ;*.COM .
+
+  Will copy all exe- and com-files from c:\files to the current directory.
+  You can have extra blanks on either side of the semi-colon whenever you
+  want, but you must have one space before the semi-colon.  Even though the
+  second mask is an include mask, it will be the destination if it is the
+  last mask in the command line.  Thus the last dot at the end defines the
+  current working directory as the destination.
+
+LETTER SELECTION:
+  With 4dos programs, you can use brackets as letter selectors.
+
+  FILE[123456].EXE
+  FILE[1-6].EXE
+
+  Both of these copy files FILE1.EXE,FILE2.EXE...FILE6.EXE. Also,
+  letters '?' and '!' can be used. '?' stands for any character and '!'
+  for negation.
+
+  FILE[!2].EXE
+
+  This would choose all files matching FILE?.EXE except FILE2.EXE.
+  CCopy can also handle letter selections with one improvement: 4dos
+  allows '!' only at the beginning of the selection, but CCopy allows
+  '!' anywhere. Some examples:
+
+  FILE[1-9!3-6].EXE       (files 1..2 and 7..9)
+  FILE[A-Z!G-P!M].EXE     (files A..F, M and Q..Z).
+
+SIZE SELECTION RANGE:
+  Accepts only the files whose sizes fall within the range.
+
+  Sizes larger than 50,000 bytes:
+  /[s50k]
+  /[s50000]
+
+  Sizes larger than 50 kilobytes (51,200 bytes):
+  /[s50K]
+  /[S50K]
+
+  Sizes between 200 kilobytes and 2 megabytes:
+  /[S200K,2M]
+
+  Sizes smaller than 120,000 bytes:
+  /[s0,120000]
+
+  Sizes between 100 and 150 bytes: (4dos doesn't allow the last two)
+  /[s100,150]
+  /[s100,+50]
+  /[S150,100]
+  /[s150,-50]
+
+TIME SELECTION RANGE:
+  Accepts only the files whose time stamps fall within the range.
+
+  Time between 10:00 and current time:
+  /[t10:00]
+  /[T10:00a]
+
+  Time between 22:00 and current time:
+  /[t10:00p]
+  /[T22:00]
+
+  Time between 10:15 and 11:15:
+  /[t10:15,11:15]
+  /[t10:15,+60]
+  /[t11:15,10:15]
+  /[t11:15,-60]
+
+  Time between 13:15:20 and 22:00:
+  /[t13:15:20,10:00P]
+
+  Time between two hours ago and one hours ago:
+  /[t-120,+60]
+
+DATE SELECTION RANGE:
+  Accepts only the files whose date stamps fall within the range.
+
+  Date between 12th October 1994 and today:
+  /[d12.10.94]
+  /[d10/12/94]
+  /[d12.10.1994]
+
+  Date between 12th June and 10th October:
+  /[D12.6,10.10]
+  /[D12-6,10-10]
+
+  Date between 12th and 22nd June:
+  /[d12.6,+10]
+  /[d22.6,-10]
+  /[D12.6,22.6]
+
+  Date between 10th May 18:00 and 12th May 10:00:
+  /[d10.5@18:00,12.5@10:00]
+  /[D10.5@18:00,+2@10:00]
+
+  Date today:
+  /[d-0]
+
+  Date yesterday:
+  /[d-1,+0]
+
+  Date yesterday or today:
+  /[d-1]
+
+
+ออออออออออออออออออออออออออออออัออออออออออออออออออออออออออออออออออออออออออออออ
+APPENDIX A: SPEED COMPARISONS ณ
+ออออออออออออออออออออออออออออออพ
+
+  To back up the claim that CCopy is very fast, several test runs have
+  been performed. All results that are listed here are averages of
+  several test runs on the same situation. The disk caching program
+  used was Smartdrive. Between each test run the cache was restarted so
+  that nothing was in the cache prior to the test.
+
+  Notice that CCopy was executed with normal parameters. This means
+  that no extra speed was squeezed by /v0 (which disables screen
+  output), /t0 (which disables one last free space check from the
+  end) or /i (which disables the source file scan before copying).
+
+  The programs tested are:
+  COPY      = 4DOS 5.50 copy command
+  XCOPY     = PC-DOS 7.0 XCOPY.EXE
+  CCOPY SW  = CCopy 1.06 shareware version
+  CCOPY REG = CCopy 1.06 registered version
+
+  ONE LARGE FILE, FAST HARD DISK IN A PCI-CONTROLLER
+  Copier      No caching   Read cache  Write cache
+  COPY       10.38s 100%   9.30s 100%   4.15s 100%
+  XCOPY       9.08s  88%   7.66s  82%   3.83s  92%
+  CCOPY SW    6.52s  63%   7.00s  75%   4.67s 113%
+  CCOPY REG   3.48s  33%   3.90s  42%   3.18s  77%
+
+  Here you see the power of CCopy's large data buffers. As only a
+  single file is being copied, there are no speed limits due to
+  FAT-updates or small file sizes and the data transfer works at
+  maximum speed. CCopy actually works faster without disk caching than
+  with one. Read caching only slows it down as all the data is copied
+  to the disk cache's memory as well. At best, CCopy is three times as
+  fast as the conventional copier.
+
+  100 SMALL FILES, FAST HARD DISK IN A PCI-CONTROLLER
+  Copier      No caching   Read cache  Write cache
+  COPY       30.78s 100%  17.32s 100%   2.36s 100%
+  XCOPY      17.28s  56%  16.59s  96%   2.20s  93%
+  CCOPY SW   27.59s  89%  13.40s  77%   2.41s 102%
+  CCOPY REG  27.76s  90%  13.40s  77%   2.43s 103%
+
+  With several small files CCopy is at a disadvantage. As it calculates
+  the total size of source files prior to copying and checks for free
+  space every now and then, it's no wonder it can't perform much better
+  than normal copiers. With read caching, CCopy is still significantly
+  better.
+
+  ONE LARGE FILE, SLOW HARD DISK IN AN ISA-CONTROLLER
+  Copier      No caching   Read cache  Write cache
+  COPY       21.07s 100%  20.65s 100%  11.63s 100%
+  XCOPY      18.13s  86%  17.85s  86%  10.40s  89%
+  CCOPY SW   12.29s  58%  11.95s  58%  11.44s  98%
+  CCOPY REG  11.39s  54%  11.15s  54%  10.88s  93%
+
+  Slower hard disks slow down all copiers and with full caching CCopy
+  is only marginally faster. With limited caching, however, a notable
+  difference in favor of CCopy can be seen.
+
+  100 SMALL FILES, SLOW HARD DISK IN AN ISA-CONTROLLER
+  Copier      No caching   Read cache  Write cache
+  COPY       42.29s 100%  31.32s 100%   3.34s 100%
+  XCOPY      30.78s  73%  30.04s  96%   3.06s  92%
+  CCOPY SW   33.36s  79%  20.06s  64%   3.62s 108%
+  CCOPY REG  30.94s  73%  19.21s  61%   3.45s 103%
+
+  While small files inhibit CCopy from utilizing its speed to its
+  maximum capacity, a slow hard disk slows other programs down even
+  more. Without caching CCopy works almost as fast as with a faster
+  hard disk (see above) and with read caching is quite better than copy
+  or xcopy.
+
+
+ออออออออออออออออออออออออออออออออัออออออออออออออออออออออออออออออออออออออออออออ
+APPENDIX B: LICENSE INFORMATION ณ
+ออออออออออออออออออออออออออออออออพ
+
+  Controlled Copy is a copyrighted computer program which is being
+  marketed as shareware.  It is not a public domain program, and it is
+  not free.
+
+  Shareware is a marketing method, not a type of software.  It gives
+  users a legal but limited trial period to evaluate a program before
+  purchase.  If you continue to use the program after the trial period
+  has ended, you must register (pay for) the program.  It's that simple.
+
+  Shareware is produced by accomplished programmers, just like retail
+  software.  There is good shareware and bad shareware, just as there is
+  good and bad retail software.  The primary difference between
+  shareware and retail software is that with shareware you know if it's
+  good or bad BEFORE you pay for it.
+
+  Shareware benefits you, the software user, because you get to try the
+  software on your own system, within your own special work environment,
+  and determine whether it meets your needs before you pay for it.  And
+  shareware benefits program authors because we are able to get our
+  products into your hands without the hundreds of thousands of dollars
+  in expenses it takes to launch a traditional software product.  There
+  are many programs on the market today which would never have become
+  available without the shareware marketing method.
+
+  The shareware system and the continued availability of quality
+  shareware products depend on your willingness to register and pay for
+  the shareware you use.  It's the registration fees you pay that allow
+  us to support and continue to develop our products.
+
+  Please show your support for shareware by registering those programs
+  you actually use and by passing them on to others.
+
+  Shareware is kept alive by YOUR support!
+
+
+อออออออออออออออออออออออออออออออออออออัอออออออออออออออออออออออออออออออออออออออ
+APPENDIX C: REGISTRATION INFORMATION ณ
+อออออออออออออออออออออออออออออออออออออพ
+
+  Controlled Copy is provided at no charge for evaluation purposes only.
+  Tarmo Toikkanen hereby grants you a limited license to use this
+  software for evaluation purposes only for a period not to exceed 30
+  days.  If you intend to continue using this software (and/or its
+  documentation) after the 30-day evaluation period, you MUST make a
+  registration payment to the author.  Using this software after the
+  evaluation period has ended without registering is a violation of the
+  terms of this limited license.
+
+  You may register Controlled Copy using the accompanying order program
+  REGISTER.EXE.  Company purchase orders are welcome.  Site licenses
+  and volume discounts are also available.  For additional information,
+  please read ORDER.DOC.
+
+
+ออออออออออออออออออออออออออออออออออัออออออออออออออออออออออออออออออออออออออออออ
+APPENDIX D: CONTACTING THE AUTHOR ณ
+ออออออออออออออออออออออออออออออออออพ
+
+   I always like to hear from the users of CCopy, so if you want to,
+   please contact me. If you have any new ideas or bug reports, I'd
+   really appreciate you letting me know. If you have any questions
+   about CCopy or just want to say hello, please go ahead.
+   You can contact me in several ways:
+
+   1. EMAIL: tarmo@kagi.com                     3. SNAIL MAIL:
+             tarmo.toikkanen@mikrobitti.fi
+                                                Tarmo Toikkanen
+   2. PHONE: +358-50-5842153                    Ruusulankatu 19 A 26
+                                                FIN-00250, Helsinki
+                                                FINLAND, EUROPE
+
+อออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออ
+

@@ -1,0 +1,343 @@
+Controlled Copy revision history, author Tarmo Toikkanen
+--------------------------------
+
+What to expect in the future
+----------------------------
+ - More filters (eg. identicality checker).
+ - New programs may be released: CDel, CTouch, CCLog.
+ - Interactive user interface for Windows and OS/2 will be released.
+ - New filter to syncronize two directories' contents
+
+
+Changes in 1.08
+---------------
+    - Date and time ranges did not function under Windows 95. Fixed.
+    + Configuration utility can now be used to brand progress indicator
+      outlooks as well as normal default options.
+    - Enclosing extended Windows 95 long file names in quotes did not
+      have any effect if 4dos was not loaded. This meant that files with
+      characters like ",", "+" or "/" were broken up into separate file names.
+      Fixed, but changes the rules a bit: now you need a space between a
+      file name and any of options, include lists and exclude lists.
+    - Zapping did not always work on disks following the first. This was due
+      to the fact that the disk change line check was unable to function
+      properly under all OSs. Now a disk change check is not performed.
+    - "cc /?[" now shows the help information on selection ranges.
+    - Option /V5 screen output has been corrected.
+
+
+Changes in 1.08 beta 2
+----------------------
+    - When a new DESCRIPT.ION file was created, it was left unhidden. Fixed.
+    - Cleaving had problems filling disks and recombination did not work.
+      Fixed. The numeration of parts has changed - the numbering stars now
+      at 1, not 0. Cleaving now leaves one cluster free on each disk, as
+      several non-standard disks had problems.
+    - OS/2-version finally uses OS/2's own error messages
+    + Command files (@filename) can now contain comments. Start any line
+      with the characters "//" and it won't be parsed as part of the
+      command line.
+    - auxiliary registration utility and information updated
+
+
+Changes in 1.08 beta
+--------------------
+    - CCopy didn't recognize that two identical files without an extension
+      were identical. Fixed.
+    - /L didn't work properly in the registered version. Fixed.
+    - /L (file cleaving) now accepts several source files.
+    - Letter selection did not recognize multiple choices. Fixed.
+    + Network copying to files fixed and printing to network printers added.
+    + OS/2 version now copies Extended Attributes.
+    - Several small mask handling bugs fixed.
+    - Empty subdirectories weren't copied before. Fixed.
+    + CCopy can now copy files to several destinations. Use a colon (separated
+      by whitespace) between destinations.
+    + CCopy can now do several identical copies one after the other. If you
+      need to copy the contents of several disks, just add two colons (::) at
+      the end of the command line and CCopy will pause after copying and will
+      restart when you press space.
+    - OS/2-version did not copy subdirectories that started with a colon (.).
+    + CCopy can now recombine files that were cleaved into small pieces. Use
+      /L and the repeat parameter (two colons, ::) to enable this feature
+      (cc a: /L ::). Then you just feed the disks in the correct order and
+      press space after each disk is copied. If you accidentally insert the
+      wrong disk, CCopy will sense this and prompt for the correct one.
+    - /S+ did not handle directories with extensions correctly. Fixed.
+    + /Q+ added for quiet batch operation. CCopy will not require any
+      interaction during its execution. When appending files, use /A+ for
+      ascii files and append a plus after any zapping to force them.
+    - Fixed a problem with OS/2 and 4DOS descriptions. In certain situations
+      CCopy would crash when updating the description files. Reason: bug
+      in Borland C++ 2.0 for OS/2.
+    + OS/2 version has been ported from Borland C++ to Visual Age. Still
+      having minor problems with screen output and such.
+
+
+Version 1.07
+------------
+    - Copying already opened files sometimes resulted in an access denied
+      error. Fixed with a more advanced sharing method.
+    - Fixed a bug with 4DOS description support that removed old descriptions.
+    - Fixed a minor bug with subst-checking under OS/2.
+    - File comparing produced erroneous warnings mainly due to a bug in the
+      Borland compiler. Fixed.
+    - Free space checking fixed to work correctly with file appending.
+    - Letter selection (as in 4dos) reactivated after the implementation of
+      Win95 long file name system.
+    - Small bug fixes: optimization, zapping
+
+
+Version 1.07 beta 2
+-------------------
+    - File comparing in the registered version produced false alarms and
+      sometimes left unwanted file stubs. Fixed.
+    - 4dos description support no longer turns old descriptions into uppercase.
+      While moving, old descriptions are also removed correctly.
+    - Now both DOS and OS/2 versions recognize and handle parameters passed
+      in quotes.
+    + Windows 95 VFAT and long file names are now supported
+    - File order optimization memory requirements have been lowered. This
+      enhancement works only with a single source mask. If more than one are
+      used, CCopy reverts to the old method which now can only handle 252
+      files due to long file name support.
+
+
+Version 1.07 beta
+-----------------
+    - Previously /Update, /Xisting and /Changed overwrote existing files
+      but now they only skip inappropriate files. To overwrite, specify
+      /Replace option as well. This change gives more flexibility.
+    + You can now press both shift-keys simultaneously to pause copying.
+      You can then either Continue, Skip the file or Abort copying.
+      Registered versions only.
+    + CCopy can now log all copying events to a file. Append
+      "= d:\path\file.ext" to activate logging. Registered versions only.
+    + Help is now expanded. Merely typing 'CC' will now give a short list
+      of the most useful options to beginners. Typing 'CC/?' will still
+      give the complete list. You can now append a letter after the question
+      mark: 'CC/?M' or 'CC/?@'. The first will give help on the Move-option
+      and the last one on command files (which are used with the @-character).
+      Note that the help information is read from CC.DOC, so you should keep
+      it in the same directory where you keep CC.EXE. This directory need not
+      be in the path.
+    + CCopy can now be used to copy files to other network machines.
+      \\ID\drive\path\file format is now identified, but if used as the
+      destination, free space checking is disabled as it is impossible
+      to perform.
+    - The previous limits of 10 exclude masks and 30 normal file masks have
+      been removed. Now the total amount is only limited by available memory
+      and the command line. With command files there is no practical limit,
+      especially in the OS/2 version.
+    - 4DOS description support rewritten for better compatibility. Several
+      bug fixes including File comparing and Zapping.
+    + CCopy can now move directory trees even faster as it no longer moves
+      each file individually but rather renames the directories if it can.
+      With /S+ and /M, CCopy completes its task with a single disk write.
+    + Option /V5 added. It will show the path information on one line and
+      the filenames with progress indicators on another line.
+
+
+Version 1.06
+------------
+    + Prompt (/P) no longer overrides other file selection options
+      (/Changed, /Xisting, /Update). This means you can specify one of
+      /CXU with /P, so that /CXU will skip all files they normally would,
+      and a confirmation promt is issued for all other files.
+    - 4dos description support is fixed. Now works with files without an
+      extension.
+    - Minor changes in screen output.
+    - Optimization (/O) no longer warns for insufficient disk space.
+    - Cleave (/L) now renumbers the parts the same way that /E does.
+    + File compare (/F) added. It does a bit by bit comparison of source and
+      destination files - useful when copying to diskettes. It also always
+      activates the DOS verify flag during copying.
+    - Estimated time to finish calculations revised for less fluctuation.
+    - /H with /S now retains subdirectories attributes.
+    + Exclude masks can now be entered by adding a comma in front of a
+      file mask, ie. CC *.EXE,A*.* E: (you can add extra spaces to either
+      side of the comma). The old method of using brackets still works.
+    - Command file processing has been corrected to accept exclude and
+      include masks, and works now identically to the normal command line
+      processing.
+    + OS/2 version of Controlled Copy is now available! This version is
+      nearly identical to the DOS version, and operates in exactly the
+      same way.
+    - When appending files, CCopy now removes all unwanted end-of-file
+      characters.
+    - A prompt is now displayed if a disk runs out of space while copying
+      a file (this can only happen on stacked drives).
+    - Extended wildcard handling is fixed to work with several complex
+      asterisk combinations.
+    - The message informing about insufficient free space now shows
+      required and available free space.
+    + When /A encounters an end-of-file character, it will issue a prompt
+      asking whether or not the file is a text file. In this case the EOF
+      will be removed. Using /A+ will skip the prompt and remove all EOFs.
+    - CC CON back space know doesn't leave extra characters in file.
+
+
+Version 1.05
+------------
+    + CCopy is now ShareWare
+    + CCopy now sees through subst and uses real directory paths: if A: is
+      substed to C:\TEMP, then CC . A:\TEST will copy to C:\TEMP\TEST
+      (requires DOS 5+)
+    + [y/n/a/s/r] -prompts now accept '?' and show info about all the
+      choices
+    + /R+ (replace) now overwrites read-only files as well, while /R
+      overwrites only non-read-only files
+    + when trying to copy over a read-only file, a ynasr-prompt is displayed
+      instead of the Abort/retry -prompt
+    + when there isn't enough free space for a file, you can now skip the
+      files with S to try the next one (isn't needed with /O)
+    + added file zapping: /Z will delete all files matching the destination
+      parameter, /Z+ will do this without confirmation, /ZZ will delete all
+      files from the destination directory and all its subdirectories, /ZZ+
+      will do this without confirmation and /ZZZ will delete the entire
+      destination disk clean - USE WITH CAUTION!
+    - 4dos description support has been corrected
+    + /E added; now changes the extensions of existing files, so that all
+      files that would be overwritten during copying will now be renamed to
+      FILE.EX?, where ? runs from 0 to 9 to A to Z until an unused name is
+      found (e.g. when copying C:\DATA.FIL to D:\ and D:\DATA.FIL exists,
+      then D:\DATA.FIL will be renamed to DATA.FI0 before copying the new
+      file (unless DATA.FI0 exists, whereupon DATA.FI1 will be used))
+    - 4dos letter selection enhancement has been corrected
+    - cosmetic changes when displaying long paths
+    - file rename prompt (after ynasr->r) has been revised to a full editor
+    + /J (jump) added: after copying is finished, the destination directory
+      becomes the current working directory
+    - /D+ is now assumed the default when copying more than one file (use
+      /A or /D- for appending files)
+    - options can be entered after file masks without a space in between
+      (CC *.*/p e:/v0 works like CC *.* e: /pv0)
+    - bug fix: @file (command file) didn't work, now does and also a space
+      in between is accepted ('@ file')
+    - /V4 screen output revised
+    + documents completely rewritten
+    + /L (cleave) added: cleaves (or splits) a file to several disks, filling
+      each disk to maximum capacity and prompting for another disk; accepts
+      only one source file
+
+
+Version 0.94
+------------
+    + 4DOS extended wildcard support is now complete - letter selection has
+      been implemented and enhanced (the negation (!) can be used more freely)
+    - exclude masks (surrounded by brackets) must have a space on either side
+      so that the brackets are separated from them (to not confuse them with
+      letter selection) - eg.    CC . [FILE1.FOO file2.foo]    ; wrong
+                                 CC . [ FILE1.FOO file2.foo ]  ; correct
+    + options are now accepted straight after the executable name, eg.
+                                 CC/MpV0 *.* e:\temp\
+    - some machines caused false "general failure"-error messages, this is now
+      handled correctly
+    + a buffer of up to 576kB is now used to speed up copying time as much as
+      30%, especially when copying large files (minimum memory requirements
+      haven't increased)
+    + progress indicators now show file reading and writing separately
+    - cyclic copying is now intercepted
+    - bug fixes (especially concerning appending)
+    - estimated time to finish has been revised to work with the new copying
+      system, now the time is shown only when both read and write speeds have
+      been calculated
+    - cc/? now shows help in two pages and waits for a keypress in between -
+      options have also been sorted in different categories
+    + /G gathers all files from subdirectories and copies them to the
+      destination directory
+    + /1 copies only those files which have their archive-attribute set
+    + /2 works like /1, but also clears the archive-attribute after copying
+      each file
+    + optimization has been rewritten to allow /M, /2 and multiple source
+      masks to work with it (memory consumption is now as 18 bytes/file)
+    + /X (existing) option added: only files that exist in the destination
+      directory are copied, that is, all existing files are automatically
+      overwritten, but no new files are copied
+    + /D+ now works like a backslash after the destination, e.g. doesn't
+      prompt but automatically creates the destination directory when needed
+    + /S+ now prunes the source directory into the destination, e.g.
+      CC SUBDIR D:\FILES /S+ will copy the files from SUBDIR under
+      D:\FILES\SUBDIR and create all potential subdirectories under that
+      location as well - very useful for moving directory trees with /MS+
+
+
+Version 0.93
+------------
+    + unrecognized command line options now generate a warning error
+    - /N (no copy) didn't work with /M (move), fixed
+    - append warning rephrased
+    + optimization (/O) now writes files in descending order of size, which
+      gives better optimization - requires 5 bytes/file of additional memory
+      and only works with one source mask
+    + /M (move) and /A (append) are no longer accepted together for security
+      reasons
+    - now capable of creating more than one step of subdirectories
+    - disk changes (when out of free space) resulted in a disk write error
+      if CCopy had created a directory structure on the previous disk - fixed
+    - manual updated
+    + support for 4DOS's extra long command lines added - command line is read
+      from enviroment variable CMDLINE, so using '@' in front of the command
+      clears it and forces CCopy to use the conventional method (max. length
+      128 characters)
+    + support for 4DOS include lists added - e.g. CC D:\TEMP\*.exe;*.com will
+      copy all EXEs and COMs from that directory
+    + support for 4DOS date and time ranges finally added
+    + /Vx now accepts option 4 (/V4), which shows only one progress indicator
+      and doesn't change lines between files - use with /T0 (/v4t0) to show
+      progress during copy and still leave screen untouched afterwards
+
+
+Version 0.92
+------------
+    - /I-option (ignore) removed
+    + /O-option (optimization) added
+    - copying to PRN and COMx didn't work properly, fixed
+    + file mask recognition enhanced to 4dos level
+    - fixed a bug that prevented /N-option from working
+    + added contents list to documents
+    + file transfer rates shown with more precision and in several
+      different units when needed (kB/sec,B/sec,B/min)
+    + added abort/retry prompts to file open errors
+    + added size range support from 4DOS
+    + when checking for free space CCopy now takes into account the files
+      that will be overwritten
+    + you can now abort copying from overwrite-prompts by pressing ESC,
+      Ctrl-C or Ctrl-Break
+    + exclude masks added, used in brackets (e.g: CC *.* [ *.zip] [*.arj] a:
+      copies all files except .zips and .arjs
+    + you can now have options and/or file masks in read from files by using
+      the '@' character (e.g: CC @CCBACKUP.LST /Q)
+    + added support for shared file access (under SHARE.EXE or OS/2)
+    + extra spaces between brackets (exclude masks and selection ranges) are
+      ignored, so they can be freely entered when needed (for 4DOS users)
+
+
+Version 0.91
+------------
+    - enviroment variable accepts options in lower case
+    + overwrite prompt enhanced
+    + Ctrl-Break handler installed
+    - free space check disabled when copying to NUL, PRN or COMx
+    + zap-option now retains files' attributes while non-zap-option (default)
+      changes all read-only files into normal archive files
+    - options must now be preceded by a slash (/), a dash (-) is no longer
+      valid as a file name could also start with a dash
+    + /V[-] option added to temporarily set or unset DOS verify flag (notice
+      difference from /Vx option which sets viewing options (x={0,1,2,3}))
+    - /Z-option (zap) is changed into /H (hidden), the effect is identical
+      but the change is made to improve compatibility with 4DOS
+    + you can now use plus-signs (+) between file names to append them
+      together like in MS- and 4dos copiers
+    + console can be used as a source mask (CC CON file.ext) to activate
+      the new enhanced console interface which allows you to write ANY
+      characters to the destination
+    + default read/write block size raised to 48kB to improve performance
+      (about 15% increase)
+    + "No files found" message improved and corrected
+
+
+Version 0.90
+------------
+    + first official freeware release
+
