@@ -1,0 +1,181 @@
+
+               SWEEP.EXE      Version 1.62  19Sep90
+           --------------------------------------------
+
+Sweep is a DOS (version 3.0 or later) command that allows you to "sweep"
+commands down through several levels of directories.  It normally begins by
+executing your commands in the current directory of the current drive, then
+descends into any subdirectories of the current directory, if any.
+
+Sweep continues until it has executed your commands in any directory that can
+be reached from the current directory.  If executed from the root directory,
+your command will be executed in all directories on the current drive.
+
+Unlike the original sweep.com ( author unknown ), sweep.exe allows you to
+pause or abort at any point, allows you to execute multiple commands in
+each directory, allows you to force the sweep to begin at the root directory,
+and/or allows you to NOT execute the commands in the current directory if you
+desire not to.
+
+
+USAGE
+-----
+
+SWEEP [-flags] command [;command ; command ; ...]
+
+
+FLAGS:
+------
+
+   -c Do not execute commands in [c]urrent directory.
+
+   -i [i]gnore keyboard - no pause command.
+
+   -r Force sweep from [r]oot directory regardless of current directory
+
+   -s Silent operation - do not echo command line to be executed
+
+   -f File mode.  Don't execute commands, place them into a batch file
+      called sweepb.bat.  The file will be created in the directory that
+      was the current directory at the time sweep was invoked.
+
+Combining -r and -c will cause the specified commands to not be executed
+in the root directory, because the root directory is forced to be the 
+current directory during the sweep.
+
+Note: it important that command flags occur immediately after the SWEEP
+command, otherwise they will be interpreted as part of some command to be
+executed.  The command "sweep dir -r *.*" would execute "dir -r *.*" in
+each directory, rather than beginning at the root directory if that was 
+what was intended. 
+
+Also, it is important that redirection to a file with the '>' or '>>'
+redirection operators be enclosed in quotes; otherwise, the operating
+system will cause the output redirection to apply to the entire operation
+of the sweep command, rather than redirecting the output of your specified
+command.  There is a MAJOR difference between the execution of:
+
+       sweep dir >dir.lst
+
+and the execution of:
+
+       sweep dir ">dir.lst"
+
+
+MULTIPLE COMMANDS
+-----------------
+
+Multiple commands can be executed in each directory that sweep visits, just
+use a semicolor (;) to separate each command.
+
+
+
+PAUSING SWEEP
+-------------
+
+   As long as the -i (ignore keyboard input) flag has not been specified,
+sweep will constantly monitor the keyboard between execution of each command.
+If it detects that a key has been pressed, a window will appear on the screen
+asking you to press "A" to abort the sweep, or any other key to continue on
+with execution of commands.  Since sweep is not in control of the system when
+actually executing commands, the pause does not take effect until after the
+current command has finished execution.
+  
+
+SPECIAL CHARACTERS IN COMMANDS
+------------------------------
+
+ & - replace with current path
+ # - replace with current directory name
+ ~ - abort any following commands if no file in this directory has
+     been modified today
+
+The characters # and & are considered to be special when encountered in a
+command.  They are replaced, as describe below, prior to executing a command.
+
+The & character is replaced by the full path name of the directory currently
+being "swept", with a leading '\', but minus any drive specifier. (i.e. the
+& character in a command while sweeping the directory "c:\123\wrksht\new"
+would be replaced by "\123\wrksheet\new").
+
+The # character is replaced by the directory name that sweep is currently
+visiting.  When visiting the directory "c:\123\wrksheet\new", the # character
+would be replaced by "new".
+
+The # and & characters assume that you have a rational directory structure
+naming convention in use on your hard disk.  If you tend to create directory
+names like "###&&&#.&&&", then you had better not try using these replacement
+characters during a sweep.
+
+
+The ~ character instructs sweep to NOT perform any more commands in this 
+directory unless at least one file in the directory has been modified today.
+("today" meaning a file has a modification date that matches the current
+system date).
+
+   
+
+EXAMPLES
+--------
+
+ sweep -irc del *.bak;del temp.*;dir *.c ">>c:\dir.lst"
+
+   1.) sweep starting at the root directory (top level).
+   2.) not execute any commands in the root directory.
+   3.) not pause when a key was hit.
+   4.) execute these three commands in all other directories:
+           del *.bak
+           del temp.*
+           dir *.c >c:\dir.lst
+
+ 
+To copy the entire directory structure of hard drive C: to hard drive D:,
+use the following:
+
+ c:
+ sweep -rc md d:&
+
+
+To copy every file in every directory except the root directory (assuming
+there is enough room on the destination drive) use:
+
+ sweep -rc md d:&;copy *.* d:&
+
+
+To ZIP every file on a drive (DON'T try this on your hard drive unless you
+have a copy of PKUNZIP on a floppy to UNZIP everything later) use:
+
+ sweep -i pkzip -m # *.*
+
+
+To back up all files that you have modified today (with "today" meaning the
+file modification date matches the current system date setting) onto a floppy
+in drive a: use:
+
+ sweep ~;copy *.* a:
+
+
+
+P. S.
+-----
+
+Sweep should be able to save you a few minutes of your time each time
+you use it.  I use it to clean up .BAK files and temporary files after a
+"hard day of editing", and also use to it backup files from my local drive
+to my network at work.  If you do find SWEEP.EXE of some use or value,
+please consider sending a minor contribution to the author (Nothing serious,
+just $2 or $3 would be fine and keep me interested in upgrading it from
+time to time).
+
+
+
+The authors address (should you desire to send $ or make suggestions) :
+
+       Robert Briggs
+       P.O. Box 571241
+       Murray, UT  84088
+
+
+
+
+
