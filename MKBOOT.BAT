@@ -92,11 +92,11 @@ GOTO END
 
         REM check if directory can be copied
         REM if it doesn't, ask for a new floppy to format
-        %BUILDDIR%\BIN\CC\CC /S+ /N /Q+ %2 %DESTDRV%\NIC\%3
+        %BUILDDIR%\BIN\CC\CC /S+ /N /Q+ %2 %DESTDRV%\NIC
         IF ERRORLEVEL 1 GOTO WantDriversDisk
         
         REM perform actual copy
-        %BUILDDIR%\BIN\CC\CC /S+ /Q+ %2 %DESTDRV%\NIC\%3
+        %BUILDDIR%\BIN\CC\CC /S+ /Q+ %2 %DESTDRV%\NIC
 GOTO END
 
 :WantDriversDisk
