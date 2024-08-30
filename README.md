@@ -26,7 +26,7 @@ No disk images are available for 320K, 180K or 160K formats.
 
 The disks include:
 
-* DOS Packet Drivers for Ne2000, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139
+* DOS Packet Drivers for NE2000/2100, 3C503, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139
 * Basic mTCP diag tools
 * Trumpet TCP For DOS (just `TCPDRV`)
 * PKTMUX, Packer Drive Multiplexer
@@ -128,9 +128,8 @@ Some things missing for now, that I might include eventually:
 * maybe include `NC` (netcat)
 * NIC drivers autoprobing
 
-## Known Issues
+## Known Issues
 
-* Build script doesn't increment disk count properly when asking for next disk. It's cosmetic, but needs fixing.
 * APIPA implementation exlcudes all .0 and .255 host IPs, even so technically only the first and the last should be excluded only. That lies in the simplified implementation in AUTOEXEC.BAT.
 * APIPA doesn't do collision checking. IP collision could occur. With 65k assignable IPs, not very likely, but it could happen. Watch out for ARP collisions.
 * `Out of Environment Space` when running `mkboot`: Make sure you have `SHELL=C:\COMMAND.COM C:\ /P /E:4096` set in `CONFIG.SYS`: Most states are passed via env-vars, and I was not very memory conserving.
