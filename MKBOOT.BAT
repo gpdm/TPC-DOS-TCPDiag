@@ -8,6 +8,7 @@ REM ********************************
 SET BUILDDIR=C:\BUILD
 cd %BUILDDIR%
 
+
 REM ********************************
 REM * Shortcut to inline functions *
 REM ********************************
@@ -32,14 +33,14 @@ REM ********************************
 REM * copy runtime files           *
 REM ********************************
 :RUNTIME
-        SET RUNTIMEF1=C:\DOS\COMMAND.COM C:\DOS\CHOICE.COM C:\DOS\FIND.EXE CFG\*.BAT
-        SET RUNTIMEF2=UTILS\RANDOM.COM UTILS\NSET.COM UTILS\QECHO.COM 
-
         ECHO Copying runtime files ...
-        FOR %%F IN (%RUNTIMEF1%) DO COPY %%F %DESTDRV%
-        FOR %%F IN (%RUNTIMEF2%) DO COPY %%F %DESTDRV%
 
+        SET RUNTIMEF1=C:\DOS\COMMAND.COM C:\DOS\CHOICE.COM C:\DOS\FIND.EXE CFG\*.BAT
+        FOR %%F IN (%RUNTIMEF1%) DO COPY %%F %DESTDRV%
         SET RUNTIMEF1=
+
+        SET RUNTIMEF2=RANDOM.COM NSET.COM QECHO.COM 
+        FOR %%F IN (%RUNTIMEF2%) DO COPY UTILS\%%F %DESTDRV%
         SET RUNTIMEF2=
 GOTO END
 
@@ -68,6 +69,9 @@ REM ********************************
         CD %BUILDDIR%\NIC
 
         CALL %BUILDDIR%\BIN\SWEEP\SWEEP -s -c %BUILDDIR%\%0 IncludeDrivers & #
+
+        REM Cleanup
+        IF EXIST %BUILDDIR%\CURDISK.BAT DEL %BUILDDIR%\CURDISK.BAT
 
         REM Change back to %BUILDDIR%
         CD %BUILDDIR%
@@ -103,7 +107,24 @@ GOTO END
         REM Make sure next disk is formated, and includes runtime
         REM then go back to include the drivers, hopefully fitting
         REM the disk this time over
-        CALL %0 AutoFormat 2
+
+        REM increment CURDISK identifier
+        REM NOTE: running via sub-shell, so var can't be
+        REM       persistet in environment.
+        REM       A temporary batch file must be used
+        REM       to carry over the disk increment to
+        REM       the next iteration.
+        REM
+        REM override CURDISK to last value, if it was persisted
+        IF EXIST %BUILDDIR%\CURDISK.BAT CALL %BUILDDIR%\CURDISK.BAT
+        
+        REM Update CURDISK+1 and persist it to next run
+        %BUILDDIR%\UTILS\VARSET CURDISK %CURDISK%+1 > %BUILDDIR%\CURDISK.BAT
+
+        REM refresh CURDISK in environment
+        IF EXIST %BUILDDIR%\CURDISK.BAT CALL %BUILDDIR%\CURDISK.BAT
+
+        CALL %0 AutoFormat %CURDISK%
         CALL %0 RUNTIME
 GOTO IncludeDrivers        
 
@@ -151,6 +172,11 @@ REM ********************************
 REM * Main Program                 *
 REM ********************************
 :MAIN
+        REM Make sure potentially disturbing left-overs
+        REM from previous (failed) runs aren't around before we start.
+        IF EXIST %BUILDDIR%\CURDISK.BAT CALL %BUILDDIR%\CURDISK.BAT
+        IF EXIST %BUILDDIR%\fmt.ans DEL %BUILDDIR%\fmt.ans
+
 
 :SelectDiskFormat
         CLS
@@ -181,42 +207,48 @@ GOTO SelectDiskFormat
 
 
 :D14M
-        SET NETUTIL=DISK1
-        SET DRIVERS=DISK1
-        SET PKTMUX=DISK1
+        SET NETUTIL=1
+        SET DRIVERS=1
+        SET PKTMUX=1
+        SET CURDISK=0
         SET LASTDISK=1
         SET DISKFMT=1.44
 GOTO DISK1
 
 :D12M
-        SET NETUTIL=DISK1
-        SET DRIVERS=DISK1
-        SET PKTMUX=DISK1
+        SET NETUTIL=1
+        SET DRIVERS=1
+        SET PKTMUX=1
+        SET CURDISK=0
         SET LASTDISK=1
         SET DISKFMT=1.2
 GOTO DISK1
 
 :D720
-        SET NETUTIL=DISK1
-        SET DRIVERS=DISK2
-        SET PKTMUX=DISK1
+        SET NETUTIL=1
+        SET DRIVERS=2
+        SET PKTMUX=1
+        SET CURDISK=0
         SET LASTDISK=2
         SET DISKFMT=720
 GOTO DISK1
 
 :D360
-        SET NETUTIL=DISK2
-        SET DRIVERS=DISK3
-        SET PKTMUX=DISK2
+        SET NETUTIL=2
+        SET DRIVERS=3
+        SET PKTMUX=2
+        SET CURDISK=0
         SET LASTDISK=3
         SET DISKFMT=360
 GOTO DISK1
 
 
-
 :DISK1
+        REM increment CURDISK identifier
+        %BUILDDIR%\UTILS\VARSET CURDISK %CURDISK%+1 | %BUILDDIR%\UTILS\NSET CURDISK=$3
+
         REM Call myself to format new disk
-        CALL %0 AutoFormat 1
+        CALL %0 AutoFormat %CURDISK%
 
         ECHO Transferring system files ...
         SYS %DESTDRV%
@@ -226,50 +258,51 @@ GOTO DISK1
         CALL %0 RUNTIME
 
         REM Higher capacity disk may include this on DISK1 already
-        IF "%PKTMUX%/" == "DISK1/" CALL %0 PKTMUX
-        IF "%NETUTIL%/" == "DISK1/" CALL %0 NETUTIL
+        IF "%PKTMUX%/" == "1/" CALL %0 PKTMUX
+        IF "%NETUTIL%/" == "1/" CALL %0 NETUTIL
         
         REM Put drivers last
-        IF "%DRIVERS%/" == "DISK1/" CALL %0 DRIVERS
+        IF "%DRIVERS%/" == "1/" CALL %0 DRIVERS
 
         REM exit if this is the last disk
         IF "%LASTDISK%/" == "1/" GOTO ENDDISK
 
 
 :DISK2
+        REM increment CURDISK identifier
+        %BUILDDIR%\UTILS\VARSET CURDISK %CURDISK%+1 | %BUILDDIR%\UTILS\NSET CURDISK=$3
+
         REM Call myself to format new disk
-        CALL %0 AutoFormat 2
+        CALL %0 AutoFormat %CURDISK%
 
         REM calling myself to copy mandatory files for DISK2
         CALL %0 RUNTIME
 
-        REM As we're on DISK2 now, put drivers first.
-        REM Routine will ask by itself for additional floppies
-        IF "%DRIVERS%/" == "DISK2/" CALL %0 DRIVERS
-
         REM Include PKTMUX and NETUTIL
-        IF "%PKTMUX%/" == "DISK2/" CALL %0 PKTMUX
-        IF "%NETUTIL%/" == "DISK2/" CALL %0 NETUTIL
+        IF "%PKTMUX%/" == "2/" CALL %0 PKTMUX
+        IF "%NETUTIL%/" == "2/" CALL %0 NETUTIL
+
+        REM Put drivers last.
+        REM Routine will ask by itself for additional floppies
+        IF "%DRIVERS%/" == "2/" CALL %0 DRIVERS
 
         REM exit if this is the last disk
         IF "%LASTDISK%/" == "2/" GOTO ENDDISK
 
 
 :DISK3
+        REM increment CURDISK identifier
+        %BUILDDIR%\UTILS\VARSET CURDISK %CURDISK%+1 | %BUILDDIR%\UTILS\NSET CURDISK=$3
+
         REM Call myself to format new disk
-        CALL %0 AutoFormat 3
+        CALL %0 AutoFormat %CURDISK%
 
         REM calling myself to copy mandatory files for DISK3
         CALL %0 RUNTIME
 
-        REM No need to bother for drivers, it was already
-        REM being taken care of on previous disks.
-        REM Include just the rest
-        IF "%PKTMUX%/" == "DISK3/" CALL %0 PKTMUX
-        IF "%NETUTIL%/" == "DISK3/" CALL %0 NETUTIL
-
-        REM exit if this is the last disk
-        IF "%LASTDISK%/" == "3/" GOTO ENDDISK
+        REM Put drivers last.
+        REM Routine will ask by itself for additional floppies
+        IF "%DRIVERS%/" == "3/" CALL %0 DRIVERS
 
 
 :ENDDISK
@@ -279,6 +312,8 @@ GOTO DISK1
 
 :CLEANUP
         ECHO Performing cleanup ...
+        IF EXIST %BUILDDIR%\CURDISK.BAT CALL %BUILDDIR%\CURDISK.BAT
+        IF EXIST %BUILDDIR%\fmt.ans DEL %BUILDDIR%\fmt.ans
         SET BUILDDIR=
         SET DESTDRV=
         SET NETUTIL=
