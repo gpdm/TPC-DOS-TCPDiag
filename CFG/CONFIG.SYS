@@ -1,5 +1,4 @@
 [MENU]
-menucolor=7,1
 menuitem=PLAIN, Plain DOS (no drivers)
 menuitem=NETHMA, DOS with HIMEM (DOS HIGH, 286+, 1+ MiB RAM)
 menuitem=NETPLAIN, DOS without HIMEM (DOS LOW, 8086/88+, < 1 MiB RAM)
