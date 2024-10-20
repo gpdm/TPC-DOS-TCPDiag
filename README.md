@@ -128,7 +128,8 @@ Some things missing for now, that I might include eventually:
 * maybe include `NC` (netcat)
 * NIC drivers autoprobing
 
-## Known Issues
+
+## Know Issues
 
 * APIPA implementation exlcudes all .0 and .255 host IPs, even so technically only the first and the last should be excluded only. That lies in the simplified implementation in AUTOEXEC.BAT.
 * APIPA doesn't do collision checking. IP collision could occur. With 65k assignable IPs, not very likely, but it could happen. Watch out for ARP collisions.
