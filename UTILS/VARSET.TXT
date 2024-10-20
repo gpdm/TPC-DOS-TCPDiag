@@ -1,0 +1,448 @@
+    --------------------------------------------------------------------
+    VARSET                             Ver 1.1 (c) 2002, Horst Schaeffer
+    --------------------------------------------------------------------
+
+    VARSET sets a variable to file related information. In addition some
+    arithmetic and string functions are offered.
+    Long file names are supported under Windows 9x and 2000 (NOT Win NT).
+
+    The syntax is easy to remember.
+
+    Example:    call var set FD=date of filename.ext
+
+    Contents: ----------------------------------------------------------
+
+    1.    VARSET information keywords (overview)
+    2.    Command modes
+    2.1   Automatic generation of the variable (through VAR.BAT)
+    2.2   Conventional handling (through temporary batch file)
+    2.3   Test mode
+    3.    Commands
+    3.1   Quote handling
+    3.2   Output options
+    3.3   Command keywords and details
+    4.1   History
+    4.2   Disclaimer, Copyright
+
+    --------------------------------------------------------------------
+
+1.  VARSET information keywords
+    ---------------------------
+    File related:
+
+    DATE        date stamp of given file, current date
+    TIME        time stamp of given file, current time
+    FILES       number of files (filespec with wildcards)
+    DIRS        number of directories (wildcards)
+    SIZE        size of file(s), bytes, KB or MB
+    LINES       number of lines (ASCII text file assumed)
+    VOL         volume label of drive
+    DRIVE       drive of filespec
+    -DRIVE      drive removed
+    NAME        name of filespec: without path, extension
+    EXT         extension of filespec
+    -EXT        extension removed
+    LFN         long file name with full path
+    SFN         short file name with full path
+    FULL        full file name (with path), see details
+
+    Other functions:
+
+    STRING(p,l)    substring (position, length)
+    (arithmetic)   evaluation of expression, integer only
+
+
+2.  Command modes
+    -------------
+    Note: The environmental variable is not stored directly in the
+    COMMAND.COM environment, because this does not work under Windows
+    NT/2000. Instead, a SET instruction is generated, that is executed
+    by the command processor. This method should also work in future DOS
+    environments.
+
+    There are three different ways to use VARSET.
+
+
+2.1 Automatic generation of the variable (through VAR.BAT)
+    ------------------------------------------------------
+    VARSET is preferably invoked thru the batch file VAR.BAT,
+
+    using the command:           CALL VAR SET ..
+    instead of the program name  VARSET ..
+
+    Syntax:     call var set VARNAME=information OF filespec
+                ------------ -------------------------------
+    Examples:   call var set FD=DATE of c:\util\some.txt
+                call var set Q=FILES c:\folder\*.txt
+                call var set LONG=LFN of filena~1
+                call var set FN = -DRIVE of "%1"
+
+    The word "of" is optional.
+
+    If you are interested, this is how it works:
+
+        The batch file VAR.BAT starts VARSET.COM, passing the complete
+        command tail.
+
+        The program evaluates the command, and writes a SET statement
+        into the second line of VAR.BAT, so this instruction will be
+        executed automatically when VAR.BAT continues.
+
+        VARSET detects this construct through a special code in VAR.BAT.
+
+    Important:
+
+    * Make sure that VAR.BAT is in the same directory with VARSET.COM.
+      Both should be in a directory accessed thru the PATH assignment.
+
+    * VAR must not be used with the extension .BAT,
+      i.e.: CALL VAR.BAT SET ... will not work!
+      However, a path may be specified e.g.: CALL ..\VAR SET
+
+    * Do not change the first line in VAR.BAT (unless you know exactly
+      what you are doing). The second line will always be overwritten.
+
+    * The number of parameters that can be passed through VAR.BAT is
+      limited to 9. This will be no problem when you enclose long file
+      names in quote marks (recommended, though not mandatory).
+
+
+2.2 Conventional handling (through temporary batch file)
+    ----------------------------------------------------
+    VARSET also supports output of the generated SET statement to STDOUT
+    for redirection to a temporary batch file.
+
+    Example:    VARSET n=vol of %1 > temp.bat
+                call temp.bat
+                del  temp.bat
+
+    This method is useful in case VARSET is on a read-only medium. The
+    "real" program name VARSET must be used. VAR.BAT is not involved.
+
+
+2.3 Test mode
+    ---------
+    Without the VAR.BAT construct and without redirection to a file the
+    SET statement will be displayed on the screen (and not executed).
+
+    Example:    VARSET N=lines of some.txt
+                VARSET x=1234+33*125
+
+
+3.  Commands
+    --------
+3.1 Quote handling
+    --------------
+    Double quote marks (") are removed, so it makes no difference
+    whether you write:
+
+                "C:\my files\long filename.txt"
+    or:          C:\my files\long filename.txt
+
+    The result is always returned without quote marks.
+
+    Note:
+
+    If you use quote marks, they must be balanced. Only outside strings
+    enclosed in quote marks options are recognized, and trailing spaces
+    removed.
+
+    Valid:      C:\files\"long filename.txt" /U
+    Invalid:    C:\files\long filename.txt" /U
+
+    If spaces may be included in LFN's (or arithmetic expressions),
+    quote marks are recommended, since the number of parameters that
+    can be passed through VAR.BAT is limited. A quoted string is only
+    a single parameter under DOS 7.+.
+
+
+3.2 Output options
+    --------------
+    /U  /L  upper or lower case output
+
+            Extended ASCII characters are supported for code page 437
+            by default. For further adaptions see supplied debug script
+            CASE103.PAT.
+
+    /Rn     right align, with total length n (blank space inserted)
+
+    /Zn     numeric output with fixed length
+            (same as /R, with leading zeros inserted)
+
+    /T      numeric output with thousands separator (acc.to Country)
+
+
+3.3 Command keywords and details
+    ----------------------------
+    Note: A syntax error will produce a message (to STDERR), and return
+          errorlevel 255.
+
+    For some commands errorlevel 1 is returned as additional information,
+    which does not indicate an error.
+
+    On errors (e.g. file not found) errorlevel 2 (or above) will result,
+    and the returned variable will be empty (except for FULL command).
+    See details.
+
+    Note: the STRING command always returns the length by errorlevel.
+
+
+DATE of <filename>
+
+    No wildcards allowed.
+    If no filename is specified, today's date is returned.
+    Date format according to country settings and with 4-digit year.
+
+    Errorlevel 0: date returned, 2: file not found
+
+    Examples:   call var set D=date of data\file.ext
+                call var set today=date
+
+
+TIME of <filename>
+
+    No wildcards allowed.
+    If no filename is specified, the current time is returned.
+    Time returned in 24h format, hh:mm (no seconds).
+
+    Errorlevel 0: time returned, 2: file not found
+
+
+FILES of <filespec>
+
+    Number of matching files (all attributes), wildcards allowed.
+    Errorlevel 0.
+
+    Example:    call var set n=files *.TXT
+
+
+DIRS of <spec>
+
+    Number of matching directories (all attributes), wildcards allowed.
+    Errorlevel 0.
+
+    Note:       call var set n=dirs FOO
+                returns "1" (if directory FOO exists)
+
+                call var set n=dirs FOO\*.*
+                returns number of subdirectories under FOO
+
+
+SIZE of <filespec>
+
+    Wildcards allowed. Size of matching files (all attributes)
+    added up (as by DIR command).
+
+    Errorlevel 0: size returned, 2: no file(s) found
+
+    Example:    call var set n=size of *.TXT
+
+    Optionally: size(KB) or size(MB), result rounded up
+                1KB=1024 bytes, 1MB=1024 KB
+
+    Example:    call var set n=size(KB) of *.TXT
+
+
+LINES of <filespec>
+
+    VARSET counts number of CR's. An empty file will return "0".
+    Errorlevel 0: number of lines returned
+    Errorlevel 2: file not found or wildcards were used
+
+    Example:    find "FOO" < source.txt > temp.txt
+                call var set N=lines of temp.txt
+                if not (%N%)==(1) goto ERROR
+
+
+VOL of <drive>
+
+    Returns volume label of <drive>. Only the first character is
+    relevant (colon is optional).
+    Errorlevel 0: ok, 2: invalid drive
+
+
+DRIVE of <filespec>
+
+    Drive returned (with colon).
+
+    If drive was included in the given filespec,
+    then: drive is extracted, errorlevel:0
+    else: the current drive is returned, errorlevel:1
+
+
+-DRIVE of <filespec>
+
+    Drive is removed, filespec is returned as given, however without
+    drive letter and colon; errorlevel 0
+
+
+NAME of <filespec>
+
+    Name of file or directory is returned without path and extension.
+    Errorlevel:0
+
+    Example:    call var set FN=name of "C:\my files\some doc.txt"
+    returns:                 FN=some doc
+
+
+EXT of <filespec>
+
+    Name extension of file or directory is returned (without the dot).
+    Errorlevel:0
+
+
+-EXT of <filespec>
+
+    The extension is removed, rest is returned as specfied (w/o dot).
+    Errorlevel:0
+
+
+LFN of <filespec>
+
+    Please note the conditions:
+
+    If LFN's are supported, AND <filespec> exists, AND there are no
+    wildcards,
+    then: the long file name with full path is returned, errorlevel:0
+    else: the FULL command is executed (see below), errorlevel:1
+
+    Notes: Errorlevel 0 means that the file or directory exists.
+           On errorlevel 1 this is not sure (see FULL).
+
+           No LFN support under Windows NT/2000
+
+
+SFN of <filespec>
+
+    Please note the conditions:
+
+    If LFN's are supported, AND <filespec> exists, AND there are no
+    wildcards,
+    then: the short file name with full path is returned, errorlevel:0
+    else: the FULL command is executed (see below), errorlevel:1
+
+    Notes: Errorlevel 0 means that the file or directory exists.
+           On errorlevel 1 this is not sure (see FULL).
+
+           No LFN support under Windows NT/2000
+
+
+FULL of <filespec>
+
+    <filespec> is completed with drive and path, if necessary.
+    <filespec> may not in fact exist (it is not verified). However,
+    if the path is to be completed, the drive must be valid.
+
+    Errorlevel 0: ok
+    Errorlevel 1: same as 0, but command was invoked through LFN/SFN
+    Errorlevel 2: path not completed due to invalid drive
+                  (filespec returned unchanged!)
+
+    Point elements in path (referring to current or higher level
+    directory) are resolved, as with the LFN/SFN commands.
+
+    These examples all return the path of the current directory:
+
+    FULL of .
+    FULL of file.ext\..
+    FULL of util\data\...
+
+    Append "\.." to remove the file name or last subdirectory from a
+    given file name with path,
+
+    for example:   call var set p=FULL of c:\some\where\file.ext\..
+    will return:                          c:\some\where
+
+    Note: the FULL command ignores invalid backsteps (beyond root).
+
+
+STRING(p,l) of <string>
+
+    Returns substring from position p (default:1) with length l (default
+    is rest of string).
+
+    Note that quote marks are always removed (and do not count for
+    the position p).
+
+    Example:    call var set foo=string "something" new /U
+    returns:                             SOMETHING NEW
+
+    Example:    call var set foo=string(2,4) "something"
+    returns:                                   omet
+
+    Be sure to use quote marks if a slash may occur within a string.
+
+    The errorlevel is set to the length of the returned string.
+    Example (testing without executing SET):
+
+                VARSET x=string %name% >nul
+                if errorlevel 9 goto TOO_LONG
+
+
+(arithmetic)
+
+    Evaluation of expression (integers)
+
+    No special keyword required: the rest of the line will be evaluated
+    (up to options). Quote marks allowed, but ignored.
+
+    The expression is processed with precedence of */\  operators,
+    i.e. 2+2*5=12, and support of (nested) parentheses. The values may
+    be signed.
+
+    Only integer values! Thousands separators (acc.to country settings)
+    are ignored. Value range: +/-2 billion (2^31-1).
+
+    Operators: + - * / \  (backslash for remainder after division)
+
+    Examples:   call var set COUNT=%COUNT%-1
+                call var set PR=12345679*81
+                call var set DIF=12-34
+                call var set X=(-12*-34/(200-188))+222
+
+    Note: Avoid spaces in expression, or enclose the expression in quote
+    marks (see quote handling).
+
+    Errorlevel 0:   result is positive or zero
+               1:   result is negative
+               2:   overflow or division by 0 (result empty)
+               255: invalid arithmetic expression (result empty)
+
+    Output options:
+
+    /Rn     right align, with total length n
+    /Zn     fixed length n with leading zeros
+    /T      thousands separators inserted (acc.to Country)
+
+    If you want to compare two values, you don't need the CALL VAR
+    construct:
+                VARSET x=%A%-%B%
+                if errorlevel 1 goto B_is_greater
+                if %a%==%b% goto AB_equal
+
+
+4.1 History
+    -------
+    Ver.1.0  Mar 2001
+    Ver.1.1  Jun 2002
+             Bugfix NAME=.. now handles multiple extensions properly
+    Ver.1.2  Sep 2002
+             Bugfix quote handling (empty string with option /U)
+
+
+4.2 Disclaimer, Copyright
+    ---------------------
+    This program is distributed as "freeware", copyright reserved by the
+    author. There are no warranties of any kind, nor any liability by
+    the author. Users accept full responsibility for the use they make
+    of the software and for any damage caused thereby.
+
+    Contact the author:
+
+    Email      horst.schaeffer@gmx.net
+
+    Homepage:
+
+    English    http://home.mnet-online.de/horst.muc/
+
+*** 10 SEP 2002
