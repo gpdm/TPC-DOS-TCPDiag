@@ -29,7 +29,7 @@ The disks include:
 * DOS Packet Drivers for NE2000/2100, 3C503, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139
 * Basic mTCP diag tools
 * Trumpet TCP For DOS (just `TCPDRV`)
-* PKTMUX, Packer Drive Multiplexer
+* PKTMUX, Packer Driver Multiplexer
 * some utilities for the included batch files
 * runtime configuration (read more below)
 
