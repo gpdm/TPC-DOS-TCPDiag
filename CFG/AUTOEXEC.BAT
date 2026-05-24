@@ -68,7 +68,7 @@ GOTO SWD_NET
         ECHO the NIC driver yourself from the shell, e.g.
         ECHO.
         ECHO   \NIC\NE2000\NE2000 %PACKETINT% %NETIRQ% %NETIOADDR%
-        ECHO
+        ECHO.
         ECHO.
         ECHO Please note, that drivers may be split accross
         ECHO multiple floppy disks.
@@ -164,6 +164,9 @@ GOTO ICMPRESPONDER
 
 
 :ICMPRESPONDER
+        CHKMEM 512
+        IF ERRORLEVEL 1 GOTO NOICMPRESPONDER
+
         ECHO Loading Packet Driver multiplexer for TTCP ...
         PKTDRV %PKTMUX_INT% %TTCP_PKTINT%
         
@@ -171,6 +174,18 @@ GOTO ICMPRESPONDER
         \TCPDRV
 
         CHOICE /C:. /T:.,2 /N ""
+        GOTO SETPROMPT
+
+
+:NOICMPRESPONDER
+        ECHO Warning: Not enough conventional memory to load
+        ECHO Packet Driver multiplexer and ICMP responder.
+        ECHO.
+        ECHO Continuing without it. System won't responde to pings,
+        ECHO but egress connectivity will work fine.
+
+        CHOICE /C:. /T:.,2 /N ""
+
 
 :SETPROMPT
         SET PROMPT=[%IP%] $p$g
