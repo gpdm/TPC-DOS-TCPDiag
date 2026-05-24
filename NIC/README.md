@@ -8,6 +8,7 @@ You'll find some collections on
 * [georgpotthast.de](http://www.georgpotthast.de/sioux/packet.htm)
 * [packetdriversdos.net (via archive.org)](https://web.archive.org/web/20240204203534/http://packetdriversdos.net/)
 * [crynwr.com](http://crynwr.com/drivers/)
+* [https://github.com/skiselev/isa8_eth/blob/main/software/driver](ISA 8-bit Ethernet Controller NE2000 Clone)
 
 Unless stated otherwise, all packet drivers have been sourced from the locations above.
 

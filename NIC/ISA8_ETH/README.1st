@@ -1,0 +1,3 @@
+Use NE2000.COM from here for 8-bit Ethernet cards.
+
+Use RTL8019's RSET utility to set config args.

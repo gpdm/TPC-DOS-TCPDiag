@@ -26,7 +26,7 @@ No disk images are available for 320K, 180K or 160K formats.
 
 The disks include:
 
-* DOS Packet Drivers for NE2000/2100, 3C503, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139
+* DOS Packet Drivers for NE2000/2100, 3C503, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139, InterLAN NI5010, ISA8_ETH Reproduction (NE2000-clone)
 * Basic mTCP diag tools
 * Trumpet TCP For DOS (just `TCPDRV`)
 * PKTMUX, Packer Driver Multiplexer
