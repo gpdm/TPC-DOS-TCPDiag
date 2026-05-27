@@ -125,7 +125,7 @@ Please also note the further remarks in the [NIC Readme](NICS/README.md).
 Some things missing for now, that I might include eventually:
 
 * XMS RamDisk for speeding things up
-  * maybe only for the scripts on >512 K systems
+  * maybe only for the scripts on <=512 K systems
   * everything for systems with "enough" RAM
 * Ask for SETNIC parameters (user-interactive)
 * include `NC` (netcat)
