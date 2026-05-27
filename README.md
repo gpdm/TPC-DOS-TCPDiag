@@ -26,7 +26,7 @@ No disk images are available for 320K, 180K or 160K formats.
 
 The disks include:
 
-* DOS Packet Drivers for NE2000/2100, 3C503, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139, InterLAN NI5010, ISA8_ETH Reproduction (NE2000-clone)
+* DOS Packet Drivers for NE2000/2100, 3C503, 3C509, 3C905, Kingston KNE2021LC, AMD PCNet, RTL8019, RTL8029, RTL8139, InterLAN NI5010, [ISA8_ETH Reproduction (NE2000-clone)](https://github.com/skiselev/isa8_eth)
 * Basic mTCP diag tools
 * Trumpet TCP For DOS (just `TCPDRV`)
 * PKTMUX, Packer Driver Multiplexer
@@ -125,7 +125,10 @@ Please also note the further remarks in the [NIC Readme](NICS/README.md).
 Some things missing for now, that I might include eventually:
 
 * XMS RamDisk for speeding things up
-* maybe include `NC` (netcat)
+  * maybe only for the scripts on >512 K systems
+  * everything for systems with "enough" RAM
+* Ask for SETNIC parameters (user-interactive)
+* include `NC` (netcat)
 * NIC drivers autoprobing
 
 
