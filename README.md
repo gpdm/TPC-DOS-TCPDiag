@@ -130,10 +130,33 @@ Some things missing for now, that I might include eventually:
 * Ask for SETNIC parameters (user-interactive)
 * include `NC` (netcat)
 * NIC drivers autoprobing
+* Add IPX/SPX support (minimalistic)
+* Refine build process: Use shell scripts (*sh) to do the build from *nix-like systems.
 
 
 ## Know Issues
 
-* APIPA implementation exlcudes all .0 and .255 host IPs, even so technically only the first and the last should be excluded only. That lies in the simplified implementation in AUTOEXEC.BAT.
+* APIPA implementation excludes all .0 and .255 host IPs, even so technically only the first and the last should be excluded only. That lies in the simplified implementation in AUTOEXEC.BAT.
 * APIPA doesn't do collision checking. IP collision could occur. With 65k assignable IPs, not very likely, but it could happen. Watch out for ARP collisions.
 * `Out of Environment Space` when running `mkboot`: Make sure you have `SHELL=C:\COMMAND.COM C:\ /P /E:4096` set in `CONFIG.SYS`: Most states are passed via env-vars, and I was not very memory conserving.
+
+
+## FAQ
+
+### Why is driver for <random> NIC not included?
+
+I built this mainly for myself, so naturally it only includes drivers for NICs I own myself.
+But I'm happy to add more drivers if there's a need for it.
+
+### Can this be enhanced for IPX/SPX?
+
+Totally, yes. I'll do that one day.
+
+### Why is <random> tool not included?
+
+Most likely because I didn't bother. First and foremost, this is not a general purpose network server thing,
+it started this mainly as a diagnostic and setup aid, especially for dealing with old NICs of unknown working state.
+
+As such, it just provides enough to get going, make a connection and some simple tests.
+
+But if a tool is small and adds good value, I'm happy to add it.
